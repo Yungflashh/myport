@@ -1,6 +1,66 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
 import { Github, Linkedin, Mail, Twitter, ArrowDown } from 'lucide-react';
+
+const MatrixRain = () => {
+  const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  useEffect(() => {
+    const canvas = canvasRef.current;
+    if (!canvas) return;
+
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+
+    const characters = 'アイウエオカキクケコサシスセソタチツテトナニヌネノハヒフヘホマミムメモヤユヨラリルレロワヲン0123456789@#$%^&*()<>/{}[]';
+    const fontSize = 14;
+    const columns = canvas.width / fontSize;
+    const drops: number[] = [];
+
+    for (let i = 0; i < columns; i++) {
+      drops[i] = Math.random() * -100;
+    }
+
+    const draw = () => {
+      ctx.fillStyle = 'rgba(26, 26, 46, 0.05)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ctx.font = `${fontSize}px monospace`;
+
+      for (let i = 0; i < drops.length; i++) {
+        const char = characters[Math.floor(Math.random() * characters.length)];
+        const opacity = Math.random() * 0.5 + 0.2;
+        const useGreen = Math.random() > 0.6;
+        ctx.fillStyle = useGreen
+          ? `rgba(34, 197, 94, ${opacity})`
+          : `rgba(207, 92, 54, ${opacity})`;
+        ctx.fillText(char, i * fontSize, drops[i] * fontSize);
+
+        if (drops[i] * fontSize > canvas.height && Math.random() > 0.975) {
+          drops[i] = 0;
+        }
+        drops[i]++;
+      }
+    };
+
+    const interval = setInterval(draw, 50);
+
+    const handleResize = () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    };
+
+    window.addEventListener('resize', handleResize);
+    return () => {
+      clearInterval(interval);
+      window.removeEventListener('resize', handleResize);
+    };
+  }, []);
+
+  return <canvas ref={canvasRef} className="absolute inset-0 opacity-50" />;
+};
 
 const Hero = () => {
   const [currentWord, setCurrentWord] = useState(0);
@@ -28,6 +88,8 @@ const Hero = () => {
       className="min-h-screen relative px-6 bg-navy overflow-hidden flex items-center justify-center"
       onMouseMove={handleMouseMove}
     >
+      <MatrixRain />
+
       {/* Ambient glow orbs */}
       <motion.div
         className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]"
