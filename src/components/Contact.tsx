@@ -34,7 +34,7 @@ const Contact: React.FC = () => {
   ];
 
   return (
-    <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20">
+    <section id="contact" className="min-h-screen flex items-center justify-center px-6 py-20 bg-navy">
       <div className="max-w-6xl mx-auto w-full">
         <motion.div
           initial={{ opacity: 0, y: 50 }}
@@ -43,13 +43,11 @@ const Contact: React.FC = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-bold mb-4">
-            <span className="bg-gradient-to-r from-purple-400 to-cyan-400 bg-clip-text text-transparent">
-              Get In Touch
-            </span>
+          <h2 className="text-5xl md:text-6xl font-bold mb-4 text-cream">
+            Get In Touch
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-purple-500 to-cyan-500 mx-auto rounded-full mb-4" />
-          <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+          <div className="w-24 h-1 bg-accent mx-auto rounded-full mb-4" />
+          <p className="text-cream-muted text-lg max-w-2xl mx-auto">
             Have a project in mind or want to collaborate? Let's create something amazing together!
           </p>
         </motion.div>
@@ -63,7 +61,7 @@ const Contact: React.FC = () => {
           >
             <form onSubmit={handleSubmit} className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-gray-300 mb-2 font-medium">
+                <label htmlFor="name" className="block text-cream-dim mb-2 font-medium">
                   Your Name
                 </label>
                 <motion.input
@@ -74,13 +72,13 @@ const Contact: React.FC = () => {
                   value={formData.name}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-navy-light border border-cream/10 text-cream placeholder-cream-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
                   placeholder="John Doe"
                 />
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-gray-300 mb-2 font-medium">
+                <label htmlFor="email" className="block text-cream-dim mb-2 font-medium">
                   Your Email
                 </label>
                 <motion.input
@@ -91,13 +89,13 @@ const Contact: React.FC = () => {
                   value={formData.email}
                   onChange={handleChange}
                   required
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all"
+                  className="w-full px-4 py-3 rounded-lg bg-navy-light border border-cream/10 text-cream placeholder-cream-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all"
                   placeholder="john@example.com"
                 />
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-gray-300 mb-2 font-medium">
+                <label htmlFor="message" className="block text-cream-dim mb-2 font-medium">
                   Your Message
                 </label>
                 <motion.textarea
@@ -108,7 +106,7 @@ const Contact: React.FC = () => {
                   onChange={handleChange}
                   required
                   rows={5}
-                  className="w-full px-4 py-3 rounded-xl bg-white/5 border border-white/10 text-white placeholder-gray-500 focus:border-purple-500 focus:outline-none focus:ring-2 focus:ring-purple-500/20 transition-all resize-none"
+                  className="w-full px-4 py-3 rounded-lg bg-navy-light border border-cream/10 text-cream placeholder-cream-muted focus:border-accent focus:outline-none focus:ring-2 focus:ring-accent/20 transition-all resize-none"
                   placeholder="Tell me about your project..."
                 />
               </div>
@@ -117,7 +115,7 @@ const Contact: React.FC = () => {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
                 type="submit"
-                className="w-full py-4 rounded-xl bg-gradient-to-r from-purple-500 to-pink-500 text-white font-semibold flex items-center justify-center gap-2 shadow-lg shadow-purple-500/50 hover:shadow-purple-500/70 transition-all"
+                className="w-full py-4 rounded-lg bg-accent text-navy font-semibold flex items-center justify-center gap-2 shadow-lg shadow-accent/20 hover:brightness-110 transition-all"
               >
                 Send Message
                 <Send size={20} />
@@ -132,9 +130,9 @@ const Contact: React.FC = () => {
             transition={{ duration: 0.6 }}
             className="space-y-8"
           >
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-cyan-500/10 backdrop-blur-sm border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Contact Information</h3>
-              
+            <div className="p-8 rounded-2xl border border-cream/5" style={{ backgroundColor: 'rgba(36, 36, 69, 0.5)', backdropFilter: 'blur(8px)' }}>
+              <h3 className="text-2xl font-bold text-cream mb-6">Contact Information</h3>
+
               <div className="space-y-4">
                 {contactInfo.map(({ Icon, text, href }, i) => (
                   <motion.a
@@ -145,10 +143,10 @@ const Contact: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     whileHover={{ x: 5 }}
-                    className="flex items-center gap-4 text-gray-300 hover:text-purple-400 transition-colors"
+                    className="flex items-center gap-4 text-cream-dim hover:text-accent transition-colors"
                   >
-                    <div className="w-12 h-12 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center">
-                      <Icon size={20} />
+                    <div className="w-12 h-12 rounded-full bg-accent/10 flex items-center justify-center">
+                      <Icon size={20} className="text-accent" />
                     </div>
                     <span>{text}</span>
                   </motion.a>
@@ -156,9 +154,9 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            <div className="p-8 rounded-2xl bg-gradient-to-br from-cyan-500/10 to-purple-500/10 backdrop-blur-sm border border-white/10">
-              <h3 className="text-2xl font-bold text-white mb-6">Follow Me</h3>
-              
+            <div className="p-8 rounded-2xl border border-cream/5" style={{ backgroundColor: 'rgba(36, 36, 69, 0.5)', backdropFilter: 'blur(8px)' }}>
+              <h3 className="text-2xl font-bold text-cream mb-6">Follow Me</h3>
+
               <div className="flex gap-4">
                 {socialLinks.map(({ Icon, href, label }, i) => (
                   <motion.a
@@ -169,10 +167,10 @@ const Contact: React.FC = () => {
                     viewport={{ once: true }}
                     transition={{ delay: i * 0.1 }}
                     whileHover={{ scale: 1.1, rotate: 5 }}
-                    className="w-14 h-14 rounded-full bg-gradient-to-r from-purple-500/20 to-cyan-500/20 flex items-center justify-center hover:from-purple-500/40 hover:to-cyan-500/40 transition-all"
+                    className="w-14 h-14 rounded-full bg-accent/10 flex items-center justify-center hover:bg-accent/20 transition-all"
                     aria-label={label}
                   >
-                    <Icon size={24} className="text-white" />
+                    <Icon size={24} className="text-cream" />
                   </motion.a>
                 ))}
               </div>
@@ -181,16 +179,17 @@ const Contact: React.FC = () => {
             <motion.div
               animate={{
                 boxShadow: [
-                  '0 0 20px rgba(168, 85, 247, 0.3)',
-                  '0 0 40px rgba(236, 72, 153, 0.5)',
-                  '0 0 20px rgba(168, 85, 247, 0.3)',
+                  '0 0 20px rgba(207, 92, 54, 0.1)',
+                  '0 0 40px rgba(207, 92, 54, 0.2)',
+                  '0 0 20px rgba(207, 92, 54, 0.1)',
                 ]
               }}
               transition={{ duration: 3, repeat: Infinity }}
-              className="p-8 rounded-2xl bg-gradient-to-br from-purple-500/10 to-pink-500/10 backdrop-blur-sm border border-white/10"
+              className="p-8 rounded-2xl border border-accent/20"
+              style={{ backgroundColor: 'rgba(36, 36, 69, 0.5)', backdropFilter: 'blur(8px)' }}
             >
-              <h3 className="text-xl font-bold text-white mb-3">Available for Freelance</h3>
-              <p className="text-gray-400">
+              <h3 className="text-xl font-bold text-cream mb-3">Available for Freelance</h3>
+              <p className="text-cream-muted">
                 I'm currently available for freelance work and exciting new projects. Let's discuss how we can work together!
               </p>
             </motion.div>
@@ -202,16 +201,9 @@ const Contact: React.FC = () => {
           whileInView={{ opacity: 1 }}
           viewport={{ once: true }}
           transition={{ delay: 0.5 }}
-          className="mt-20 pt-8 border-t border-white/10 text-center text-gray-400"
+          className="mt-20 pt-8 border-t border-cream/5 text-center text-cream-muted"
         >
-          <p>© 2024 Your Name. Built with React, TypeScript & Framer Motion</p>
-          <motion.p
-            animate={{ opacity: [0.5, 1, 0.5] }}
-            transition={{ duration: 2, repeat: Infinity }}
-            className="mt-2 text-sm"
-          >
-            Crafted with <span className="text-red-500">❤️</span> and lots of coffee
-          </motion.p>
+          <p>© 2024 Yungflash. Built with React, TypeScript & Framer Motion</p>
         </motion.div>
       </div>
     </section>

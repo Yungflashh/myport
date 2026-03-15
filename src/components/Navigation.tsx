@@ -24,14 +24,17 @@ const Navigation: React.FC = () => {
     <motion.nav
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-        scrolled ? 'bg-black/80 backdrop-blur-lg py-4' : 'bg-transparent py-6'
+      className={`fixed top-0 w-full z-50 transition-all duration-500 ${
+        scrolled
+          ? 'py-3 border-b border-cream/5'
+          : 'bg-transparent py-6'
       }`}
+      style={scrolled ? { backgroundColor: 'rgba(26, 26, 46, 0.85)', backdropFilter: 'blur(20px)' } : {}}
     >
       <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
         <motion.div
           whileHover={{ scale: 1.05 }}
-          className="text-2xl font-bold bg-gradient-to-r from-purple-400 via-pink-400 to-cyan-400 bg-clip-text text-transparent"
+          className="text-2xl font-bold text-accent"
         >
           &lt;Yungflash /&gt;
         </motion.div>
@@ -44,8 +47,8 @@ const Navigation: React.FC = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1 }}
-              whileHover={{ scale: 1.1, color: '#a78bfa' }}
-              className="text-gray-300 hover:text-purple-400 transition-colors"
+              whileHover={{ scale: 1.1 }}
+              className="text-cream-dim hover:text-accent transition-colors text-sm tracking-wide uppercase"
             >
               {item}
             </motion.button>
@@ -54,7 +57,7 @@ const Navigation: React.FC = () => {
 
         <button
           onClick={() => setIsOpen(!isOpen)}
-          className="md:hidden text-white"
+          className="md:hidden text-cream"
         >
           {isOpen ? <X size={28} /> : <Menu size={28} />}
         </button>
@@ -65,7 +68,8 @@ const Navigation: React.FC = () => {
               initial={{ opacity: 0, x: '100%' }}
               animate={{ opacity: 1, x: 0 }}
               exit={{ opacity: 0, x: '100%' }}
-              className="fixed top-0 right-0 h-screen w-64 bg-black/95 backdrop-blur-xl md:hidden"
+              className="fixed top-0 right-0 h-screen w-64 border-l border-cream/5 md:hidden"
+              style={{ backgroundColor: 'rgba(26, 26, 46, 0.97)', backdropFilter: 'blur(24px)' }}
             >
               <div className="flex flex-col gap-6 p-8 mt-20">
                 {navItems.map((item, i) => (
@@ -75,7 +79,7 @@ const Navigation: React.FC = () => {
                     initial={{ opacity: 0, x: 50 }}
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: i * 0.1 }}
-                    className="text-xl text-gray-300 hover:text-purple-400 text-left"
+                    className="text-xl text-cream-dim hover:text-accent text-left tracking-wide"
                   >
                     {item}
                   </motion.button>

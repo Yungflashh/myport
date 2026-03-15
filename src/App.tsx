@@ -7,6 +7,7 @@ import Skills from './components/Skills';
 import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Loader from './components/Loader';
+import FloatingIcons from './components/FloatingIcons';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -15,12 +16,12 @@ function App() {
     scrollYProgress,
     [0, 0.2, 0.4, 0.6, 0.8, 1],
     [
-      'rgb(5, 8, 12)',
-      'rgb(8, 12, 18)',
-      'rgb(10, 15, 22)',
-      'rgb(8, 12, 18)',
-      'rgb(6, 10, 15)',
-      'rgb(5, 8, 12)'
+      '#1a1a2e',
+      '#1e1e36',
+      '#22223e',
+      '#1e1e36',
+      '#1c1c32',
+      '#1a1a2e'
     ]
   );
 
@@ -40,10 +41,11 @@ function App() {
             animate={{ opacity: 1 }}
             transition={{ duration: 0.8 }}
             style={{ backgroundColor }}
-            className="min-h-screen text-white overflow-x-hidden relative bg-black"
+            className="min-h-screen text-cream overflow-x-hidden relative bg-navy"
           >
             <Navigation />
-            
+            <FloatingIcons />
+
             <main className="relative z-10">
               <Hero />
               <About />
@@ -54,7 +56,8 @@ function App() {
 
             <div className="fixed inset-0 pointer-events-none z-0">
               <motion.div
-                className="absolute top-20 left-10 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"
+                className="absolute top-20 left-10 w-96 h-96 rounded-full blur-3xl"
+                style={{ backgroundColor: 'rgba(207, 92, 54, 0.08)' }}
                 animate={{
                   scale: [1, 1.2, 1],
                   opacity: [0.3, 0.5, 0.3],
@@ -62,7 +65,8 @@ function App() {
                 transition={{ duration: 8, repeat: Infinity }}
               />
               <motion.div
-                className="absolute bottom-20 right-10 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl"
+                className="absolute bottom-20 right-10 w-96 h-96 rounded-full blur-3xl"
+                style={{ backgroundColor: 'rgba(207, 92, 54, 0.08)' }}
                 animate={{
                   scale: [1.2, 1, 1.2],
                   opacity: [0.5, 0.3, 0.5],
