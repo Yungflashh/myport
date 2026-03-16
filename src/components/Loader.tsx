@@ -82,7 +82,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
         ))}
       </div>
 
-      <div className="relative z-10 w-full max-w-4xl mx-4">
+      <div className="relative z-10 w-full max-w-4xl mx-3 sm:mx-4">
         <motion.div
           initial={{ y: -50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
@@ -95,7 +95,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
             <div className="w-3 h-3 rounded-full bg-yellow-500" />
             <div className="w-3 h-3 rounded-full bg-green-500" />
           </div>
-          <span className="ml-4 text-cream-muted text-sm font-mono">
+          <span className="ml-2 sm:ml-4 text-cream-muted text-xs sm:text-sm font-mono truncate">
             terminal - yungflash@portfolio:~
           </span>
         </motion.div>
@@ -104,7 +104,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
           initial={{ y: 50, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="rounded-b-lg p-6 shadow-2xl min-h-[400px] relative overflow-hidden"
+          className="rounded-b-lg p-4 sm:p-6 shadow-2xl min-h-[350px] sm:min-h-[400px] relative overflow-hidden"
           style={{ backgroundColor: '#1a1a2e', border: '1px solid rgba(253, 255, 252, 0.05)' }}
         >
           <motion.div
@@ -117,21 +117,22 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="mb-8 text-accent font-mono text-xs md:text-sm leading-tight"
+            className="mb-8 text-accent font-mono leading-tight overflow-hidden"
           >
-            <pre className="text-center">
-{`
-██╗   ██╗██╗   ██╗███╗   ██╗ ██████╗ ███████╗██╗      █████╗ ███████╗██╗  ██╗
+            {/* Desktop ASCII */}
+            <pre className="text-center text-[0.45rem] sm:text-xs md:text-sm hidden sm:block">
+{`██╗   ██╗██╗   ██╗███╗   ██╗ ██████╗ ███████╗██╗      █████╗ ███████╗██╗  ██╗
 ╚██╗ ██╔╝██║   ██║████╗  ██║██╔════╝ ██╔════╝██║     ██╔══██╗██╔════╝██║  ██║
  ╚████╔╝ ██║   ██║██╔██╗ ██║██║  ███╗█████╗  ██║     ███████║███████╗███████║
   ╚██╔╝  ██║   ██║██║╚██╗██║██║   ██║██╔══╝  ██║     ██╔══██║╚════██║██╔══██║
    ██║   ╚██████╔╝██║ ╚████║╚██████╔╝██║     ███████╗██║  ██║███████║██║  ██║
-   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝
-`}
+   ╚═╝    ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝`}
             </pre>
+            {/* Mobile text */}
+            <h1 className="text-center text-3xl font-bold tracking-widest sm:hidden">YUNGFLASH</h1>
           </motion.div>
 
-          <div className="space-y-2 mb-6 font-mono text-sm">
+          <div className="space-y-1.5 sm:space-y-2 mb-6 font-mono text-xs sm:text-sm">
             <AnimatePresence>
               {displayedCode.map((line, index) => (
                 <motion.div
@@ -232,10 +233,10 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
         </motion.div>
       </div>
 
-      <div className="absolute top-8 left-8 text-accent/20 text-6xl font-mono">{'<'}</div>
-      <div className="absolute top-8 right-8 text-accent/20 text-6xl font-mono">{'>'}</div>
-      <div className="absolute bottom-8 left-8 text-accent/20 text-6xl font-mono">{'{'}</div>
-      <div className="absolute bottom-8 right-8 text-accent/20 text-6xl font-mono">{'}'}</div>
+      <div className="absolute top-4 left-4 sm:top-8 sm:left-8 text-accent/20 text-3xl sm:text-6xl font-mono">{'<'}</div>
+      <div className="absolute top-4 right-4 sm:top-8 sm:right-8 text-accent/20 text-3xl sm:text-6xl font-mono">{'>'}</div>
+      <div className="absolute bottom-4 left-4 sm:bottom-8 sm:left-8 text-accent/20 text-3xl sm:text-6xl font-mono">{'{'}</div>
+      <div className="absolute bottom-4 right-4 sm:bottom-8 sm:right-8 text-accent/20 text-3xl sm:text-6xl font-mono">{'}'}</div>
     </motion.div>
   );
 };

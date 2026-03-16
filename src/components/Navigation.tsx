@@ -12,7 +12,7 @@ const Navigation: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const navItems = ['Home', 'About', 'Skills', 'Projects', 'Contact'];
+  const navItems = ['Home', 'About', 'Skills', 'Projects', 'Testimonials', 'Contact'];
 
   const scrollToSection = (item: string) => {
     const element = document.getElementById(item.toLowerCase());

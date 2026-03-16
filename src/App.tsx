@@ -8,6 +8,8 @@ import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Loader from './components/Loader';
 import FloatingIcons from './components/FloatingIcons';
+import Testimonials from './components/Testimonials';
+import CodeRainBg from './components/CodeRainBg';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -46,11 +48,14 @@ function App() {
             <Navigation />
             <FloatingIcons />
 
+            <CodeRainBg />
+
             <main className="relative z-10">
               <Hero />
               <About />
               <Skills />
               <Projects />
+              <Testimonials />
               <Contact />
             </main>
 

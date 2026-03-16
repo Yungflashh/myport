@@ -28,8 +28,17 @@ const skills: Skill[] = [
     icon: Code,
     category: "Frontend",
     description: "Building modern, scalable web applications with React hooks and state management",
-    yearsExp: 3,
+    yearsExp: 4,
     projects: 10
+  },
+  {
+    name: "Next.js",
+    level: 90,
+    icon: Zap,
+    category: "Frontend",
+    description: "Full-stack React framework with SSR, SSG, API routes, and optimized performance",
+    yearsExp: 3,
+    projects: 8
   },
   {
     name: "React Native",
@@ -37,7 +46,7 @@ const skills: Skill[] = [
     icon: Smartphone,
     category: "Frontend",
     description: "Cross-platform mobile development with React Native for iOS and Android",
-    yearsExp: 2,
+    yearsExp: 3,
     projects: 5
   },
   {
@@ -46,7 +55,7 @@ const skills: Skill[] = [
     icon: Palette,
     category: "Frontend",
     description: "Utility-first CSS framework for rapid UI development and responsive design",
-    yearsExp: 3,
+    yearsExp: 4,
     projects: 10
   },
   {
@@ -59,22 +68,76 @@ const skills: Skill[] = [
     projects: 10
   },
   {
+    name: "HTML",
+    level: 95,
+    icon: Code,
+    category: "Frontend",
+    description: "Semantic HTML5 markup, accessibility best practices, and SEO-friendly structure",
+    yearsExp: 5,
+    projects: 20
+  },
+  {
+    name: "CSS",
+    level: 92,
+    icon: Palette,
+    category: "Frontend",
+    description: "Modern CSS3, animations, Flexbox, Grid, and responsive design techniques",
+    yearsExp: 5,
+    projects: 20
+  },
+  {
+    name: "JavaScript",
+    level: 95,
+    icon: FileCode,
+    category: "Language",
+    description: "Advanced JavaScript including ES6+, async patterns, and DOM manipulation",
+    yearsExp: 5,
+    projects: 20
+  },
+  {
     name: "TypeScript",
     level: 90,
     icon: FileCode,
     category: "Language",
     description: "Type-safe development with advanced TypeScript features and patterns",
-    yearsExp: 3,
+    yearsExp: 4,
     projects: 10
   },
   {
     name: "Python",
-    level: 50,
+    level: 65,
     icon: Code,
     category: "Language",
-    description: "Data processing, automation, and backend development with Python",
+    description: "AI/ML development, data processing, automation, and backend APIs with Python and its ecosystem",
+    yearsExp: 2,
+    projects: 5
+  },
+  {
+    name: "Pandas",
+    level: 55,
+    icon: Database,
+    category: "Other",
+    description: "Data manipulation, analysis, and transformation with Pandas DataFrames and Series",
     yearsExp: 1,
-    projects: 4
+    projects: 3
+  },
+  {
+    name: "FastAPI",
+    level: 50,
+    icon: Zap,
+    category: "Backend",
+    description: "High-performance Python web framework for building APIs with automatic documentation",
+    yearsExp: 1,
+    projects: 2
+  },
+  {
+    name: "Flask",
+    level: 55,
+    icon: Code,
+    category: "Backend",
+    description: "Lightweight Python web framework for building REST APIs and microservices",
+    yearsExp: 1,
+    projects: 3
   },
   {
     name: "Node.js",
@@ -82,8 +145,17 @@ const skills: Skill[] = [
     icon: Zap,
     category: "Backend",
     description: "Server-side JavaScript with Express, REST APIs, and microservices",
-    yearsExp: 3,
+    yearsExp: 4,
     projects: 8
+  },
+  {
+    name: "Prisma",
+    level: 80,
+    icon: Database,
+    category: "Backend",
+    description: "Type-safe ORM for Node.js and TypeScript with database migrations and schema management",
+    yearsExp: 2,
+    projects: 5
   },
   {
     name: "GraphQL",
@@ -96,12 +168,30 @@ const skills: Skill[] = [
   },
   {
     name: "PostgreSQL",
-    level: 50,
+    level: 70,
     icon: Database,
     category: "Database",
     description: "Advanced SQL queries, optimization, and database design",
-    yearsExp: 1,
-    projects: 2
+    yearsExp: 2,
+    projects: 5
+  },
+  {
+    name: "MongoDB",
+    level: 75,
+    icon: Database,
+    category: "Database",
+    description: "NoSQL document database for flexible, scalable data storage and aggregation pipelines",
+    yearsExp: 3,
+    projects: 6
+  },
+  {
+    name: "MySQL",
+    level: 65,
+    icon: Database,
+    category: "Database",
+    description: "Relational database management with optimized queries and schema design",
+    yearsExp: 2,
+    projects: 4
   },
   {
     name: "SQLite",
@@ -132,16 +222,19 @@ const skills: Skill[] = [
   },
 ];
 
+const MOBILE_SKILL_LIMIT = 4;
+
 const Skills: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState('All');
   const [selectedSkill, setSelectedSkill] = useState<Skill | null>(null);
+  const [showAll, setShowAll] = useState(false);
 
   const filtered = activeCategory === 'All'
     ? skills
     : skills.filter(s => s.category === activeCategory);
 
   const getExperienceLevel = (years: number) => {
-    if (years >= 4) return 'Expert';
+    if (years >= 5) return 'Expert';
     if (years >= 3) return 'Advanced';
     if (years >= 2) return 'Intermediate';
     return 'Beginner';
@@ -180,7 +273,7 @@ const Skills: React.FC = () => {
               key={cat.key}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              onClick={() => setActiveCategory(cat.key)}
+              onClick={() => { setActiveCategory(cat.key); setShowAll(false); }}
               className={`px-4 sm:px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
                 activeCategory === cat.key
                   ? 'bg-accent text-navy shadow-lg shadow-accent/20'
@@ -196,6 +289,7 @@ const Skills: React.FC = () => {
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((skill, index) => {
+              const hiddenOnMobile = !showAll && index >= MOBILE_SKILL_LIMIT;
               const Icon = skill.icon;
               return (
                 <motion.div
@@ -207,7 +301,7 @@ const Skills: React.FC = () => {
                   transition={{ duration: 0.35, delay: index * 0.05 }}
                   whileHover={{ y: -6 }}
                   onClick={() => setSelectedSkill(skill)}
-                  className="group cursor-pointer p-5 rounded-xl border border-cream/5 hover:border-accent/30 transition-all duration-300"
+                  className={`group cursor-pointer p-5 rounded-xl border border-cream/5 hover:border-accent/30 transition-all duration-300 ${hiddenOnMobile ? 'hidden sm:block' : ''}`}
                   style={{ backgroundColor: 'rgba(36, 36, 69, 0.4)' }}
                 >
                   <div className="flex items-center gap-4 mb-4">
@@ -241,6 +335,19 @@ const Skills: React.FC = () => {
             })}
           </AnimatePresence>
         </motion.div>
+
+        {/* View more / less on mobile */}
+        {filtered.length > MOBILE_SKILL_LIMIT && (
+          <div className="mt-6 text-center sm:hidden">
+            <motion.button
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setShowAll(!showAll)}
+              className="px-6 py-2.5 rounded-full text-sm font-medium bg-accent/15 text-accent border border-accent/20"
+            >
+              {showAll ? 'Show less' : `View all ${filtered.length} skills`}
+            </motion.button>
+          </div>
+        )}
 
         {/* Detail Modal */}
         <AnimatePresence>

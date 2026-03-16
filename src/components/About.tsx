@@ -5,10 +5,10 @@ import myImg from "../assets/my_img.jpeg"
 import myImg2 from "../assets/my_img2.jpeg"
 
 const stats = [
-  { value: '3+', label: 'Years Experience' },
+  { value: '4+', label: 'Years Experience' },
   { value: '20+', label: 'Projects Completed' },
   { value: '10+', label: 'Happy Clients' },
-  { value: '5+', label: 'Technologies' },
+  { value: '15+', label: 'Technologies' },
 ];
 
 const features = [
@@ -36,6 +36,7 @@ const features = [
 
 const About = () => {
   const [currentImage, setCurrentImage] = useState(0);
+  const [isRevealed, setIsRevealed] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
 
   const { scrollYProgress } = useScroll({
@@ -105,14 +106,23 @@ const About = () => {
               <div className="absolute -inset-3 rounded-2xl border border-accent/10 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
 
               {/* Main image container */}
-              <div className="relative rounded-2xl overflow-hidden aspect-[3/4]">
+              <div
+                className="relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer"
+                onMouseEnter={() => setIsRevealed(true)}
+                onMouseLeave={() => setIsRevealed(false)}
+                onClick={() => setIsRevealed((prev) => !prev)}
+              >
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentImage}
                     src={images[currentImage].src}
                     alt={images[currentImage].alt}
-                    initial={{ opacity: 0, scale: 1.1 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, scale: 1.1, filter: 'blur(12px)' }}
+                    animate={{
+                      opacity: 1,
+                      scale: 1,
+                      filter: isRevealed ? 'blur(0px)' : 'blur(12px)',
+                    }}
                     exit={{ opacity: 0, scale: 0.95 }}
                     transition={{ duration: 0.5 }}
                     className="w-full h-full object-cover"
@@ -169,7 +179,7 @@ const About = () => {
                 className="absolute -bottom-5 -right-5 px-5 py-3 rounded-xl border border-accent/30 shadow-xl"
                 style={{ backgroundColor: 'rgba(26, 26, 46, 0.9)', backdropFilter: 'blur(16px)' }}
               >
-                <div className="text-2xl font-bold text-accent">3+</div>
+                <div className="text-2xl font-bold text-accent">4+</div>
                 <div className="text-xs text-cream-muted">Years Exp.</div>
               </motion.div>
             </motion.div>
@@ -206,7 +216,7 @@ const About = () => {
                 {[
                   { Icon: MapPin, text: 'Lagos, Nigeria' },
                   { Icon: Briefcase, text: 'Freelancer' },
-                  { Icon: Calendar, text: '3+ Years' },
+                  { Icon: Calendar, text: '4+ Years' },
                 ].map(({ Icon, text }) => (
                   <div
                     key={text}
@@ -221,14 +231,16 @@ const About = () => {
 
               {/* CTA */}
               <motion.div className="pt-2">
-                <motion.button
+                <motion.a
+                  href="/Adenusi_Oluwakayode_David_CV.pdf"
+                  download
                   whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(207, 92, 54, 0.25)' }}
                   whileTap={{ scale: 0.95 }}
                   className="inline-flex items-center gap-2 px-8 py-3.5 rounded-lg bg-accent text-cream font-semibold hover:brightness-110 transition-all shadow-lg shadow-accent/15"
                 >
                   <Download size={18} />
                   Download Resume
-                </motion.button>
+                </motion.a>
               </motion.div>
             </motion.div>
           </motion.div>

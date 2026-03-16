@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useMotionValue, useTransform } from 'framer-motion';
-import { Github, Linkedin, Mail, Twitter, ArrowDown } from 'lucide-react';
+import { ArrowDown } from 'lucide-react';
 
 const MatrixRain = () => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -178,6 +178,7 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, boxShadow: '0 0 30px rgba(207, 92, 54, 0.3)' }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('projects')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-10 py-4 bg-accent text-cream font-semibold text-lg rounded-lg hover:brightness-110 transition-all w-full sm:w-auto shadow-lg shadow-accent/20"
             >
               View My Work
@@ -186,39 +187,13 @@ const Hero = () => {
             <motion.button
               whileHover={{ scale: 1.05, borderColor: 'rgba(207, 92, 54, 0.6)' }}
               whileTap={{ scale: 0.95 }}
+              onClick={() => document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })}
               className="px-10 py-4 text-cream font-semibold text-lg rounded-lg border border-cream/15 hover:text-accent transition-all w-full sm:w-auto backdrop-blur-sm"
             >
               Get in Touch
             </motion.button>
           </motion.div>
 
-          {/* Social links */}
-          <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            transition={{ delay: 1 }}
-            className="flex gap-5 justify-center pt-8"
-          >
-            {[
-              { Icon: Github, href: '#', label: 'GitHub' },
-              { Icon: Linkedin, href: '#', label: 'LinkedIn' },
-              { Icon: Twitter, href: '#', label: 'Twitter' },
-              { Icon: Mail, href: '#', label: 'Email' }
-            ].map(({ Icon, href, label }, i) => (
-              <motion.a
-                key={label}
-                href={href}
-                initial={{ opacity: 0, y: 10 }}
-                animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 1.1 + i * 0.1 }}
-                whileHover={{ y: -4, scale: 1.15 }}
-                className="w-11 h-11 rounded-full border border-cream/10 flex items-center justify-center text-cream-muted hover:text-accent hover:border-accent/30 transition-all"
-                aria-label={label}
-              >
-                <Icon size={18} strokeWidth={1.5} />
-              </motion.a>
-            ))}
-          </motion.div>
         </motion.div>
       </motion.div>
 
