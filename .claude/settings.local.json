@@ -1,8 +1,0 @@
-{
-  "permissions": {
-    "allow": [
-      "Bash(Get-ChildItem -Path \"C:\\\\Users\\\\YungFlash\\\\Desktop\\\\projects\\\\myportfolio@2025\\\\portfolio\" -Recurse -Directory)",
-      "Bash(Select-Object -ExpandProperty FullName)"
-    ]
-  }
-}
