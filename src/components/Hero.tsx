@@ -90,7 +90,6 @@ const Hero = () => {
     >
       <MatrixRain />
 
-      {/* Ambient glow orbs */}
       <motion.div
         className="absolute top-1/4 -left-32 w-[500px] h-[500px] rounded-full blur-[120px]"
         style={{ backgroundColor: 'rgba(207, 92, 54, 0.07)' }}
@@ -104,7 +103,6 @@ const Hero = () => {
         transition={{ duration: 12, repeat: Infinity, ease: "easeInOut" }}
       />
 
-      {/* Main content with 3D tilt */}
       <motion.div
         className="relative z-10 max-w-5xl mx-auto text-center"
         style={{ rotateX, rotateY, transformPerspective: 1200 }}
@@ -115,7 +113,6 @@ const Hero = () => {
           transition={{ duration: 0.8 }}
           className="space-y-8"
         >
-          {/* Status badge */}
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -130,7 +127,6 @@ const Hero = () => {
             <span className="text-sm text-cream-dim tracking-wide">Available for work</span>
           </motion.div>
 
-          {/* Title */}
           <div className="space-y-4">
             <motion.h1
               initial={{ opacity: 0, y: 20 }}
@@ -158,7 +154,6 @@ const Hero = () => {
             </div>
           </div>
 
-          {/* Subtitle */}
           <motion.p
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
@@ -168,7 +163,6 @@ const Hero = () => {
             I build digital experiences that matter. Let's create something extraordinary together.
           </motion.p>
 
-          {/* CTA Buttons */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -197,7 +191,6 @@ const Hero = () => {
         </motion.div>
       </motion.div>
 
-      {/* Scroll indicator */}
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}

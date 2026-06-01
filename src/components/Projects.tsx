@@ -132,7 +132,6 @@ const Projects: React.FC = () => {
   return (
     <section id="projects" className="px-4 sm:px-6 py-20 sm:py-28 bg-navy">
       <div className="max-w-5xl mx-auto w-full">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -152,7 +151,6 @@ const Projects: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -181,7 +179,6 @@ const Projects: React.FC = () => {
           })}
         </motion.div>
 
-        {/* Project List */}
         <div className="space-y-20">
           <AnimatePresence mode="popLayout">
             {filtered.map((project, index) => {
@@ -199,7 +196,6 @@ const Projects: React.FC = () => {
                     !isEven ? 'lg:direction-rtl' : ''
                   }`}
                 >
-                  {/* Image */}
                   <motion.div
                     whileHover={{ scale: 1.02 }}
                     transition={{ duration: 0.3 }}
@@ -215,7 +211,6 @@ const Projects: React.FC = () => {
                       />
                     </div>
 
-                    {/* Image overlay on hover */}
                     <div className="absolute inset-0 bg-navy/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-xl flex items-center justify-center gap-4">
                       {project.live && (
                         <motion.a
@@ -232,17 +227,14 @@ const Projects: React.FC = () => {
                       )}
                     </div>
 
-                    {/* Category badge */}
                     <div className="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-medium bg-navy/80 backdrop-blur-sm border border-cream/10 text-cream-muted flex items-center gap-1.5">
                       {project.category === 'mobile' ? <Smartphone size={12} /> : <Monitor size={12} />}
                       {project.category === 'mobile' ? 'Mobile App' : 'Website'}
                     </div>
 
-                    {/* Subtle border */}
                     <div className="absolute inset-0 rounded-xl border border-cream/5 group-hover:border-accent/20 transition-colors pointer-events-none" />
                   </motion.div>
 
-                  {/* Content */}
                   <div className={`space-y-5 ${!isEven ? 'lg:order-1 lg:text-right' : ''}`}>
                     <div>
                       <span className="text-accent text-sm font-medium tracking-wider uppercase">

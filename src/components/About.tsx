@@ -61,11 +61,9 @@ const About = () => {
       ref={sectionRef}
       className="relative px-4 sm:px-6 py-24 sm:py-32 bg-navy overflow-hidden"
     >
-      {/* Background accent glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] rounded-full blur-[200px] pointer-events-none" style={{ backgroundColor: 'rgba(207, 92, 54, 0.04)' }} />
 
       <div className="max-w-6xl mx-auto relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -87,9 +85,7 @@ const About = () => {
           <div className="w-20 h-1 bg-accent mx-auto rounded-full" />
         </motion.div>
 
-        {/* Main content - Image + Bio */}
         <div className="grid lg:grid-cols-5 gap-10 lg:gap-16 items-center mb-24">
-          {/* Image column - takes 2 cols */}
           <motion.div
             style={{ y: imageY }}
             className="lg:col-span-2 relative"
@@ -101,11 +97,9 @@ const About = () => {
               transition={{ duration: 0.7 }}
               className="relative group"
             >
-              {/* Decorative frame */}
               <div className="absolute -inset-3 rounded-2xl border border-accent/20 -rotate-3 group-hover:rotate-0 transition-transform duration-500" />
               <div className="absolute -inset-3 rounded-2xl border border-accent/10 rotate-2 group-hover:rotate-0 transition-transform duration-500" />
 
-              {/* Main image container */}
               <div
                 className="relative rounded-2xl overflow-hidden aspect-[3/4] cursor-pointer"
                 onMouseEnter={() => setIsRevealed(true)}
@@ -129,10 +123,8 @@ const About = () => {
                   />
                 </AnimatePresence>
 
-                {/* Gradient overlay */}
                 <div className="absolute inset-0 bg-gradient-to-t from-navy via-transparent to-transparent opacity-60" />
 
-                {/* Nav arrows */}
                 <div className="absolute inset-0 flex items-center justify-between px-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                   <motion.button
                     whileHover={{ scale: 1.1 }}
@@ -154,7 +146,6 @@ const About = () => {
                   </motion.button>
                 </div>
 
-                {/* Dots */}
                 <div className="absolute bottom-4 left-1/2 -translate-x-1/2 flex gap-2">
                   {images.map((_, index) => (
                     <button
@@ -170,7 +161,6 @@ const About = () => {
                 </div>
               </div>
 
-              {/* Floating experience badge */}
               <motion.div
                 initial={{ opacity: 0, scale: 0 }}
                 whileInView={{ opacity: 1, scale: 1 }}
@@ -185,7 +175,6 @@ const About = () => {
             </motion.div>
           </motion.div>
 
-          {/* Content column - takes 3 cols */}
           <motion.div
             style={{ y: contentY }}
             className="lg:col-span-3 space-y-7"
@@ -211,7 +200,6 @@ const About = () => {
                 </p>
               </div>
 
-              {/* Quick info tags */}
               <div className="flex flex-wrap gap-3 pt-2">
                 {[
                   { Icon: MapPin, text: 'Lagos, Nigeria' },
@@ -229,7 +217,6 @@ const About = () => {
                 ))}
               </div>
 
-              {/* CTA */}
               <motion.div className="pt-2">
                 <motion.a
                   href="/Adenusi_Oluwakayode_David_CV.pdf"
@@ -246,7 +233,6 @@ const About = () => {
           </motion.div>
         </div>
 
-        {/* Stats bar */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -279,7 +265,6 @@ const About = () => {
           ))}
         </motion.div>
 
-        {/* What I bring - features */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -309,7 +294,6 @@ const About = () => {
                 className="group relative p-6 rounded-xl border border-cream/5 hover:border-accent/30 transition-all duration-300 overflow-hidden"
                 style={{ backgroundColor: 'rgba(36, 36, 69, 0.35)' }}
               >
-                {/* Hover glow */}
                 <div className="absolute inset-0 bg-accent/0 group-hover:bg-accent/[0.03] transition-colors duration-500 rounded-xl" />
 
                 <div className="relative z-10">
@@ -320,7 +304,6 @@ const About = () => {
                   <p className="text-cream-muted text-sm leading-relaxed">{description}</p>
                 </div>
 
-                {/* Corner accent */}
                 <div className="absolute top-0 right-0 w-16 h-16 overflow-hidden rounded-bl-xl">
                   <div className="absolute -top-8 -right-8 w-16 h-16 bg-accent/5 rotate-45 group-hover:bg-accent/10 transition-colors duration-300" />
                 </div>

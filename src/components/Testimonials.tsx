@@ -111,7 +111,6 @@ const Testimonials = () => {
   return (
     <section id="testimonials" className="px-4 sm:px-6 py-20 sm:py-28 relative overflow-hidden">
       <div className="max-w-4xl mx-auto w-full relative z-10">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -128,7 +127,6 @@ const Testimonials = () => {
           </p>
         </motion.div>
 
-        {/* Testimonial Card */}
         <div className="relative">
           <AnimatePresence mode="wait" custom={direction}>
             <motion.div
@@ -142,24 +140,20 @@ const Testimonials = () => {
               className="rounded-2xl border border-cream/5 p-8 sm:p-10 relative overflow-hidden"
               style={{ backgroundColor: 'rgba(36, 36, 69, 0.5)', backdropFilter: 'blur(12px)' }}
             >
-              {/* Quote icon */}
               <div className="absolute top-6 right-6 opacity-10">
                 <Quote size={60} className="text-accent" />
               </div>
 
-              {/* Stars */}
               <div className="flex gap-1 mb-6">
                 {Array.from({ length: t.rating }).map((_, i) => (
                   <Star key={i} size={18} className="text-accent fill-accent" />
                 ))}
               </div>
 
-              {/* Quote text */}
               <p className="text-cream-dim text-base sm:text-lg leading-relaxed mb-8 relative z-10">
                 "{t.text}"
               </p>
 
-              {/* Author */}
               <div className="flex items-center gap-4">
                 <div className="w-12 h-12 rounded-full bg-accent/15 border border-accent/20 flex items-center justify-center text-accent font-bold text-sm">
                   {t.avatar}
@@ -174,7 +168,6 @@ const Testimonials = () => {
             </motion.div>
           </AnimatePresence>
 
-          {/* Navigation */}
           <div className="flex items-center justify-between mt-8">
             <motion.button
               whileHover={{ scale: 1.1 }}
@@ -186,7 +179,6 @@ const Testimonials = () => {
               <ChevronLeft size={20} />
             </motion.button>
 
-            {/* Dots */}
             <div className="flex gap-2">
               {testimonials.map((_, i) => (
                 <button

@@ -48,7 +48,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           transformStyle: 'preserve-3d',
         }}
       >
-        {/* Front */}
         <motion.div
           className="absolute inset-0 rounded-2xl overflow-hidden border border-cream/10 shadow-2xl"
           style={{
@@ -113,7 +112,6 @@ const ProjectCard: React.FC<ProjectCardProps> = ({
           />
         </motion.div>
 
-        {/* Back */}
         <motion.div
           className="absolute inset-0 rounded-2xl overflow-hidden border border-accent/20 shadow-2xl"
           style={{

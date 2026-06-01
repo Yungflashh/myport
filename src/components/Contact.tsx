@@ -165,7 +165,6 @@ const Contact: React.FC = () => {
               </div>
             </div>
 
-            {/* WhatsApp CTA */}
             <motion.a
               href={WHATSAPP_URL}
               target="_blank"

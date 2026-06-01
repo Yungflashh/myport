@@ -243,7 +243,6 @@ const Skills: React.FC = () => {
   return (
     <section id="skills" className="min-h-screen flex items-center justify-center px-4 sm:px-6 py-20 sm:py-28 relative overflow-hidden bg-navy">
       <div className="max-w-5xl mx-auto w-full">
-        {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 40 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -260,7 +259,6 @@ const Skills: React.FC = () => {
           </p>
         </motion.div>
 
-        {/* Category Filter */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -285,7 +283,6 @@ const Skills: React.FC = () => {
           ))}
         </motion.div>
 
-        {/* Skills Grid */}
         <motion.div layout className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-5">
           <AnimatePresence mode="popLayout">
             {filtered.map((skill, index) => {
@@ -315,7 +312,6 @@ const Skills: React.FC = () => {
                     <span className="text-sm font-bold text-accent">{skill.level}%</span>
                   </div>
 
-                  {/* Progress Bar */}
                   <div className="h-1.5 bg-navy rounded-full overflow-hidden">
                     <motion.div
                       className="h-full bg-accent rounded-full"
@@ -336,7 +332,6 @@ const Skills: React.FC = () => {
           </AnimatePresence>
         </motion.div>
 
-        {/* View more / less on mobile */}
         {filtered.length > MOBILE_SKILL_LIMIT && (
           <div className="mt-6 text-center sm:hidden">
             <motion.button
@@ -349,7 +344,6 @@ const Skills: React.FC = () => {
           </div>
         )}
 
-        {/* Detail Modal */}
         <AnimatePresence>
           {selectedSkill && (
             <motion.div
@@ -427,7 +421,6 @@ const Skills: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Subtle grid bg */}
       <div className="absolute inset-0 opacity-[0.02] pointer-events-none">
         <div className="absolute inset-0" style={{
           backgroundImage: `

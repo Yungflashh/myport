@@ -119,7 +119,6 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
             transition={{ duration: 0.8 }}
             className="mb-8 text-accent font-mono leading-tight overflow-hidden"
           >
-            {/* Desktop ASCII */}
             <pre className="text-center text-[0.45rem] sm:text-xs md:text-sm hidden sm:block">
 {`██╗   ██╗██╗   ██╗███╗   ██╗ ██████╗ ███████╗██╗      █████╗ ███████╗██╗  ██╗
 ╚██╗ ██╔╝██║   ██║████╗  ██║██╔════╝ ██╔════╝██║     ██╔══██╗██╔════╝██║  ██║
@@ -128,7 +127,6 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
    ██║   ╚██████╔╝██║ ╚████║╚██████╔╝██║     ███████╗██║  ██║███████║██║  ██║
    ╚═╝    ╚═════╝ ╚═╝  ╚═══╝ ╚═════╝ ╚═╝     ╚══════╝╚═╝  ╚═╝╚══════╝╚═╝  ╚═╝`}
             </pre>
-            {/* Mobile text */}
             <h1 className="text-center text-3xl font-bold tracking-widest sm:hidden">YUNGFLASH</h1>
           </motion.div>
 
