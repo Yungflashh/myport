@@ -29,12 +29,12 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
           clearInterval(progressInterval);
           setTimeout(() => {
             onLoadComplete();
-          }, 1000);
+          }, 200);
           return 100;
         }
-        return prev + 1;
+        return prev + 2;
       });
-    }, 40);
+    }, 20);
 
     const lineInterval = setInterval(() => {
       setCurrentLine(prev => {
@@ -44,7 +44,7 @@ const Loader: React.FC<LoaderProps> = ({ onLoadComplete }) => {
         }
         return prev;
       });
-    }, 400);
+    }, 160);
 
     return () => {
       clearInterval(progressInterval);

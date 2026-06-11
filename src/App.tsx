@@ -1,15 +1,20 @@
-import { useState } from 'react';
+import { useState, lazy, Suspense } from 'react';
 import { motion, useScroll, useTransform, AnimatePresence } from 'framer-motion';
 import Hero from './components/Hero';
-import About from './components/About';
-import Projects from './components/Projects';
-import Skills from './components/Skills';
-import Contact from './components/Contact';
 import Navigation from './components/Navigation';
 import Loader from './components/Loader';
 import FloatingIcons from './components/FloatingIcons';
-import Testimonials from './components/Testimonials';
 import CodeRainBg from './components/CodeRainBg';
+import ScrollProgress from './components/ScrollProgress';
+import CursorTrail from './components/CursorTrail';
+import TerminalWidget from './components/TerminalWidget';
+import EasterEgg from './components/EasterEgg';
+
+const About = lazy(() => import('./components/About'));
+const Skills = lazy(() => import('./components/Skills'));
+const Projects = lazy(() => import('./components/Projects'));
+const Testimonials = lazy(() => import('./components/Testimonials'));
+const Contact = lazy(() => import('./components/Contact'));
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -47,16 +52,22 @@ function App() {
           >
             <Navigation />
             <FloatingIcons />
+            <ScrollProgress />
+            <CursorTrail />
+            <TerminalWidget />
+            <EasterEgg />
 
             <CodeRainBg />
 
             <main className="relative z-10">
               <Hero />
-              <About />
-              <Skills />
-              <Projects />
-              <Testimonials />
-              <Contact />
+              <Suspense fallback={null}>
+                <About />
+                <Skills />
+                <Projects />
+                <Testimonials />
+                <Contact />
+              </Suspense>
             </main>
 
             <div className="fixed inset-0 pointer-events-none z-0">

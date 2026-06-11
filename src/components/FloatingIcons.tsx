@@ -28,18 +28,18 @@ interface FloatingItem {
 
 const FloatingIcons = () => {
   const items = useMemo<FloatingItem[]>(() => {
-    return Array.from({ length: 25 }, (_, i) => ({
+    return Array.from({ length: 12 }, (_, i) => ({
       id: i,
       label: techLabels[i % techLabels.length],
       x: Math.random() * 92 + 4,
       y: Math.random() * 92 + 4,
       size: Math.random() * 5 + 11,
-      duration: Math.random() * 18 + 22,
+      duration: Math.random() * 18 + 28,
       delay: Math.random() * 12,
-      driftX: (Math.random() - 0.5) * 160,
-      driftY: (Math.random() - 0.5) * 160,
-      rotate: (Math.random() - 0.5) * 20,
-      opacity: Math.random() * 0.06 + 0.03,
+      driftX: (Math.random() - 0.5) * 100,
+      driftY: (Math.random() - 0.5) * 100,
+      rotate: (Math.random() - 0.5) * 12,
+      opacity: Math.random() * 0.05 + 0.03,
     }));
   }, []);
 
