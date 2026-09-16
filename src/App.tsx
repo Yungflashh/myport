@@ -19,3 +19,23 @@ function pexelsSources(id) {
     `${base}-hd_1080_1920_30fps.mp4`,
     `${base}-sd_960_540_25fps.mp4`,
     `${base}-sd_960_540_30fps.mp4`,
+    `${base}-sd_640_360_25fps.mp4`,
+    `${base}-sd_640_360_30fps.mp4`,
+  ];
+}
+
+/* Video IDs — all from Pexels, tailoring/fashion theme
+   6764964  master tailor cutting outline in atelier   ✓ confirmed working
+   6766337  tailor cutting fabric on table
+   4927683  sewing machine stitching close-up
+   3755530  woman sewing red cloth
+   7452737  close-up sewing machine needle in factory
+   7677746  top view black fabric texture               */
+const VID = {
+  hero:    6764964,
+  craft:   6766337,
+  machine: 4927683,
+  sewing:  3755530,
+  needle:  7452737,
+  fabric:  7677746,
+};
