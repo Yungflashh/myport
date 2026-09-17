@@ -80,3 +80,24 @@ function Reveal({ children, delay = 0, y = 30 }) {
   const [vis, setVis] = useState(false);
   useEffect(() => {
     const el = ref.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { if (e.isIntersecting) { setVis(true); obs.disconnect(); } },
+      { threshold: 0.12 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={ref} style={{
+      opacity: vis ? 1 : 0,
+      transform: vis ? "none" : `translateY(${y}px)`,
+      transition: `opacity 0.9s ${delay}s cubic-bezier(.22,1,.36,1), transform 0.9s ${delay}s cubic-bezier(.22,1,.36,1)`,
+    }}>
+      {children}
+    </div>
+  );
+}
+
+// Horizontal ticker
+function Ticker({ items }) {
