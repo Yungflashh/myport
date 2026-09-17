@@ -60,3 +60,23 @@ function BgVideo({ id, style, overlayColor = "rgba(10,10,10,0.52)" }) {
     <div ref={wrapRef} style={{ position: "absolute", inset: 0, overflow: "hidden", ...style }}>
       {/* CSS animated fallback — shows while video loads or if all sources fail */}
       <div style={{
+        position: "absolute", inset: 0, zIndex: 0,
+        background: "linear-gradient(135deg, #0f0f0f 0%, #1a1410 50%, #0a0a0a 100%)",
+        backgroundSize: "400% 400%",
+        animation: "bgPulse 8s ease infinite",
+      }} />
+      <video ref={vidRef} autoPlay muted loop playsInline
+        style={{ position: "absolute", inset: 0, width: "100%", height: "100%", objectFit: "cover", zIndex: 1 }}>
+        {pexelsSources(id).map(src => <source key={src} src={src} type="video/mp4" />)}
+      </video>
+      <div style={{ position: "absolute", inset: 0, background: overlayColor, zIndex: 2 }} />
+    </div>
+  );
+}
+
+// Scroll-reveal wrapper
+function Reveal({ children, delay = 0, y = 30 }) {
+  const ref = useRef(null);
+  const [vis, setVis] = useState(false);
+  useEffect(() => {
+    const el = ref.current;
