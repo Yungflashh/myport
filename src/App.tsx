@@ -39,3 +39,24 @@ const VID = {
   needle:  7452737,
   fabric:  7677746,
 };
+
+/* ─── COMPONENTS ─────────────────────────────────────────────────────────── */
+
+// Autoplay video that pauses when off-screen + multi-source fallback
+function BgVideo({ id, style, overlayColor = "rgba(10,10,10,0.52)" }) {
+  const vidRef = useRef(null);
+  const wrapRef = useRef(null);
+  useEffect(() => {
+    const el = wrapRef.current;
+    if (!el) return;
+    const obs = new IntersectionObserver(
+      ([e]) => { try { e.isIntersecting ? vidRef.current?.play() : vidRef.current?.pause(); } catch(_){} },
+      { threshold: 0.15 }
+    );
+    obs.observe(el);
+    return () => obs.disconnect();
+  }, []);
+  return (
+    <div ref={wrapRef} style={{ position: "absolute", inset: 0, overflow: "hidden", ...style }}>
+      {/* CSS animated fallback — shows while video loads or if all sources fail */}
+      <div style={{
