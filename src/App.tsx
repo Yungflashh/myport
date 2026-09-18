@@ -101,3 +101,23 @@ function Reveal({ children, delay = 0, y = 30 }) {
 
 // Horizontal ticker
 function Ticker({ items }) {
+  const [x, setX] = useState(0);
+  const rep = [...items, ...items, ...items, ...items];
+  useEffect(() => {
+    let raf;
+    const tick = () => { setX(p => (p + 0.45) % (items.length * 175)); raf = requestAnimationFrame(tick); };
+    raf = requestAnimationFrame(tick);
+    return () => cancelAnimationFrame(raf);
+  }, [items]);
+  return (
+    <div style={{ overflow: "hidden", background: "#0d0d0d", borderTop: "1px solid rgba(201,169,110,0.15)", borderBottom: "1px solid rgba(201,169,110,0.15)", padding: "13px 0" }}>
+      <div style={{ display: "flex", transform: `translateX(-${x}px)`, willChange: "transform" }}>
+        {rep.map((t, i) => (
+          <span key={i} style={{ fontSize: "0.67rem", letterSpacing: "0.2em", textTransform: "uppercase", color: "rgba(245,240,232,0.35)", paddingRight: "1rem", flexShrink: 0, display: "flex", alignItems: "center", gap: "1rem" }}>
+            {t}
+            <span style={{ color: "#c9a96e", opacity: 0.5, fontSize: "0.5rem" }}>◆</span>
+          </span>
+        ))}
+      </div>
+    </div>
+  );
