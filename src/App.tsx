@@ -121,3 +121,24 @@ function Ticker({ items }) {
       </div>
     </div>
   );
+}
+
+/* ─── DATA ────────────────────────────────────────────────────────────────── */
+const NAV = ["Work", "Process", "Story", "Rates", "Contact"];
+
+const SERVICES = [
+  { n: "01", title: "Bespoke Suits",       tag: "Signature",  desc: "Fully canvassed, hand-stitched suits built from a paper pattern cut to your body only. Two fittings minimum. Nothing is shared with another client's pattern." },
+  { n: "02", title: "Made-to-Measure",     tag: "Popular",    desc: "A refined fit from a modified block pattern. Faster lead time, the same premium fabrics, and every key measurement still captured from your body." },
+  { n: "03", title: "Evening Wear",        tag: "Occasions",  desc: "Dinner jackets, agbadas, senator kaftans, gowns. Ceremonial dress that commands a room before you speak." },
+  { n: "04", title: "Alterations",         tag: "Fast",       desc: "We rescue and recraft — hems, relined jackets, taking in or letting out, sleeve adjustments. Nothing beyond repair. Turnaround from 48 hours." },
+  { n: "05", title: "Corporate Wardrobe",  tag: "Ongoing",    desc: "Quarterly wardrobe packages for executives who need to show up consistently. Every piece calibrated to your existing wardrobe." },
+  { n: "06", title: "Wedding Party",       tag: "Events",     desc: "Groom, groomsmen, family. The full party dressed cohesively from one studio — no mismatched fabrics, no last-minute surprises." },
+];
+
+const PROCESS = [
+  { title: "Consult",  body: "30 minutes in person or on a video call. We learn how you move, how you sit, how you present — so the clothes work for your life, not ours." },
+  { title: "Measure",  body: "42 body measurements taken with precision tape. Your geometry becomes the only pattern that exists for your garment." },
+  { title: "Fabric",   body: "Choose from 200+ premium swatches — Holland & Sherry worsteds, Dormeuil Super 130s, Thomas Mason cotton shirtings, Ghanaian kente accents." },
+  { title: "Cut",      body: "Every panel cut by hand from your paper pattern. No automated cutting tables, no block approximation." },
+  { title: "Fit",      body: "First fitting at 60% construction. Adjustments marked live on your body in chalk. Not on a mannequin. Never guessed." },
+  { title: "Deliver",  body: "Final garment pressed, tissue-wrapped, and handed over with a care card and a one-year structural guarantee." },
