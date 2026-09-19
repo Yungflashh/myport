@@ -142,3 +142,23 @@ const PROCESS = [
   { title: "Cut",      body: "Every panel cut by hand from your paper pattern. No automated cutting tables, no block approximation." },
   { title: "Fit",      body: "First fitting at 60% construction. Adjustments marked live on your body in chalk. Not on a mannequin. Never guessed." },
   { title: "Deliver",  body: "Final garment pressed, tissue-wrapped, and handed over with a care card and a one-year structural guarantee." },
+];
+
+const TESTIMONIALS = [
+  { q: "I've worn suits from London, Milan, and New York. Nothing has fit like this. Not once.", name: "Emeka O.", role: "Managing Director, Lagos" },
+  { q: "Three wedding pieces. Every single one was perfect. My guests still ask where I got dressed.", name: "Femi A.", role: "Architect, Abuja" },
+  { q: "They took a jacket I hated and made me love wearing it. Atelier is the only tailor I recommend.", name: "Chidera N.", role: "Creative Director, Lagos" },
+  { q: "My corporate wardrobe package changed how I walk into every meeting. Worth every naira.", name: "Adaeze K.", role: "CEO, Victoria Island" },
+];
+
+/* ─── MAIN COMPONENT ──────────────────────────────────────────────────────── */
+export default function AtelierPage() {
+  const [menuOpen, setMenuOpen]     = useState(false);
+  const [scrolled, setScrolled]     = useState(false);
+  const [activeQ, setActiveQ]       = useState(0);
+  const [form, setForm]             = useState({ name: "", email: "", service: "", message: "" });
+  const [sent, setSent]             = useState(false);
+
+  useEffect(() => {
+    const fn = () => setScrolled(window.scrollY > 50);
+    window.addEventListener("scroll", fn, { passive: true });
