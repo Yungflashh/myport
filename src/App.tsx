@@ -183,3 +183,23 @@ export default function AtelierPage() {
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
         html { scroll-behavior: smooth; }
         body { font-family: 'DM Sans', sans-serif; background: #0a0a0a; color: #f5f0e8; overflow-x: hidden; }
+        ::selection { background: rgba(201,169,110,0.3); }
+        ::-webkit-scrollbar { width: 3px; }
+        ::-webkit-scrollbar-track { background: #0a0a0a; }
+        ::-webkit-scrollbar-thumb { background: #c9a96e; }
+        a { text-decoration: none; color: inherit; }
+        input, textarea, select { font-family: 'DM Sans', sans-serif; color: #f5f0e8; }
+
+        @keyframes bgPulse {
+          0%,100% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+        }
+        @keyframes fadeUp {
+          from { opacity:0; transform: translateY(30px); }
+          to   { opacity:1; transform: none; }
+        }
+        @keyframes fadeIn {
+          from { opacity:0; } to { opacity:1; }
+        }
+        @keyframes dropLine {
+          0%   { top: -100%; }
