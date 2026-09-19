@@ -162,3 +162,24 @@ export default function AtelierPage() {
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", fn, { passive: true });
+    return () => window.removeEventListener("scroll", fn);
+  }, []);
+
+  useEffect(() => {
+    const t = setInterval(() => setActiveQ(p => (p + 1) % TESTIMONIALS.length), 5000);
+    return () => clearInterval(t);
+  }, []);
+
+  const G = "#c9a96e"; // gold
+  const C = "#f5f0e8"; // cream
+  const M = "rgba(245,240,232,0.55)"; // muted
+  const B = "rgba(245,240,232,0.09)"; // border
+  const serif = "'Cormorant Garamond', serif";
+
+  return (
+    <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; }
+        body { font-family: 'DM Sans', sans-serif; background: #0a0a0a; color: #f5f0e8; overflow-x: hidden; }
