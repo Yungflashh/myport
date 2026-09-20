@@ -203,3 +203,24 @@ export default function AtelierPage() {
         }
         @keyframes dropLine {
           0%   { top: -100%; }
+          100% { top: 150%; }
+        }
+        @keyframes rotateSlow {
+          from { transform: rotate(0deg); }
+          to   { transform: rotate(360deg); }
+        }
+
+        /* NAV */
+        .nav-link { font-size: 0.71rem; font-weight: 400; letter-spacing: 0.14em; text-transform: uppercase; color: rgba(245,240,232,0.6); transition: color 0.2s; }
+        .nav-link:hover { color: #f5f0e8; }
+
+        /* BUTTONS */
+        .btn-gold { display: inline-block; font-size: 0.71rem; font-weight: 500; letter-spacing: 0.12em; text-transform: uppercase; background: #c9a96e; color: #0a0a0a; padding: 0.85rem 2.25rem; border: none; cursor: pointer; transition: background 0.25s, transform 0.18s; }
+        .btn-gold:hover { background: #b8955a; transform: translateY(-1px); }
+        .btn-outline { display: inline-block; font-size: 0.71rem; font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; background: transparent; color: rgba(245,240,232,0.65); padding: 0.85rem 2.25rem; border: 1px solid rgba(245,240,232,0.22); cursor: pointer; transition: all 0.25s; }
+        .btn-outline:hover { color: #f5f0e8; border-color: rgba(245,240,232,0.55); }
+
+        /* SERVICE ROWS */
+        .svc-row { border-top: 1px solid rgba(245,240,232,0.08); padding: 1.75rem 0; transition: background 0.3s; }
+        .svc-row:hover { background: rgba(245,240,232,0.025); padding-left: 0.5rem; transition: all 0.3s; }
+        .svc-row:hover .svc-arrow { opacity:1; transform: translateX(0); color: #c9a96e; }
