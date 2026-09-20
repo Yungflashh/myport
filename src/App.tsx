@@ -224,3 +224,23 @@ export default function AtelierPage() {
         .svc-row { border-top: 1px solid rgba(245,240,232,0.08); padding: 1.75rem 0; transition: background 0.3s; }
         .svc-row:hover { background: rgba(245,240,232,0.025); padding-left: 0.5rem; transition: all 0.3s; }
         .svc-row:hover .svc-arrow { opacity:1; transform: translateX(0); color: #c9a96e; }
+        .svc-arrow { opacity:0; transform: translateX(-10px); transition: all 0.3s; font-size: 1rem; }
+
+        /* PROCESS */
+        .proc-row { display:flex; gap:2rem; padding:1.75rem 0; border-bottom:1px solid rgba(245,240,232,0.07); transition: padding-left 0.3s; }
+        .proc-row:hover { padding-left: 0.5rem; }
+        .proc-row:hover .proc-n { color: #c9a96e; }
+        .proc-n { font-family: 'Cormorant Garamond',serif; font-size:0.9rem; color:rgba(245,240,232,0.18); min-width:2.25rem; padding-top:3px; transition:color 0.3s; letter-spacing:0.05em; flex-shrink:0; }
+
+        /* FORM */
+        .f-field { width:100%; background:rgba(245,240,232,0.04); border:1px solid rgba(245,240,232,0.1); padding:0.875rem 1rem; font-size:0.875rem; outline:none; transition:border-color 0.25s; }
+        .f-field::placeholder { color:rgba(245,240,232,0.28); }
+        .f-field:focus { border-color:#c9a96e; }
+        select.f-field option { background:#111; }
+
+        /* FOOTER */
+        .ft-link { font-size:0.68rem; letter-spacing:0.1em; text-transform:uppercase; color:rgba(245,240,232,0.3); transition:color 0.2s; }
+        .ft-link:hover { color:rgba(245,240,232,0.75); }
+
+        /* MOBILE */
+        .mob-overlay { position:fixed; inset:0; z-index:200; background:#080808; display:flex; flex-direction:column; padding:2rem; overflow-y:auto; }
