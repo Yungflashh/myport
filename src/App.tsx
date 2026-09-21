@@ -285,3 +285,23 @@ export default function AtelierPage() {
             <p style={{ fontSize:"0.7rem", color:"rgba(245,240,232,0.2)", letterSpacing:"0.1em" }}>+234 801 234 5678 · hello@atelierlagos.com</p>
           </div>
         </div>
+      )}
+
+      {/* ════════════════════════════════════════════════════
+          §1  HERO
+      ════════════════════════════════════════════════════ */}
+      <section id="hero" style={{ position:"relative", height:"100vh", overflow:"hidden" }}>
+        <BgVideo id={VID.hero} overlayColor="linear-gradient(160deg, rgba(10,10,10,0.7) 0%, rgba(10,10,10,0.3) 45%, rgba(10,10,10,0.82) 100%)" />
+
+        {/* FIXED NAV */}
+        <nav style={{
+          position:"fixed", top:0, left:0, right:0, zIndex:100,
+          display:"flex", alignItems:"center", justifyContent:"space-between",
+          padding:"1.6rem 3rem",
+          background: scrolled ? "rgba(8,8,8,0.88)" : "transparent",
+          backdropFilter: scrolled ? "blur(14px)" : "none",
+          borderBottom: scrolled ? "1px solid rgba(245,240,232,0.06)" : "none",
+          transition:"background 0.4s, backdrop-filter 0.4s, border 0.4s",
+        }}>
+          <a href="#hero" style={{ fontFamily:serif, fontSize:"1.5rem", fontWeight:300, letterSpacing:"0.16em", textTransform:"uppercase", position:"relative", zIndex:1 }}>
+            Ate<em style={{ fontStyle:"italic" }}>lier</em>
