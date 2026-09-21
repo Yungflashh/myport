@@ -244,3 +244,23 @@ export default function AtelierPage() {
 
         /* MOBILE */
         .mob-overlay { position:fixed; inset:0; z-index:200; background:#080808; display:flex; flex-direction:column; padding:2rem; overflow-y:auto; }
+
+        @media (max-width: 768px) {
+          .hide-mob { display:none !important; }
+          .show-mob { display:flex !important; }
+          .sec-pad { padding: 5rem 1.5rem !important; }
+          .hero-title { font-size: clamp(3.75rem, 16vw, 5.5rem) !important; }
+          .split-2 { grid-template-columns: 1fr !important; }
+          .split-3 { grid-template-columns: 1fr !important; }
+          .split-4 { grid-template-columns: 1fr 1fr !important; }
+          .craft-flex { flex-direction: column !important; }
+          .craft-vid { width: 100% !important; height: 55vw !important; min-height: 240px; }
+          .hero-btns { flex-direction:column !important; align-items:flex-start !important; }
+          .quote-text { font-size: clamp(1.4rem,5vw,2rem) !important; }
+          .proc-split { flex-direction:column !important; gap:2rem !important; }
+        }
+        @media (min-width: 769px) {
+          .show-mob { display:none !important; }
+        }
+        @media (prefers-reduced-motion: reduce) {
+          *, *::before, *::after { animation:none !important; transition:none !important; }
