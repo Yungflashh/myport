@@ -264,3 +264,24 @@ export default function AtelierPage() {
         }
         @media (prefers-reduced-motion: reduce) {
           *, *::before, *::after { animation:none !important; transition:none !important; }
+        }
+      `}</style>
+
+      {/* MOBILE MENU OVERLAY */}
+      {menuOpen && (
+        <div className="mob-overlay">
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", marginBottom:"3rem" }}>
+            <span style={{ fontFamily:serif, fontSize:"1.5rem", fontWeight:300, letterSpacing:"0.15em" }}>Ate<em>lier</em></span>
+            <button onClick={() => setMenuOpen(false)} style={{ background:"none", border:"none", color:C, fontSize:"1.5rem", cursor:"pointer", lineHeight:1 }}>✕</button>
+          </div>
+          {NAV.map(l => (
+            <a key={l} href={`#${l.toLowerCase()}`} onClick={() => setMenuOpen(false)}
+              style={{ fontFamily:serif, fontSize:"2.75rem", fontWeight:300, color:C, display:"block", padding:"0.6rem 0", borderBottom:"1px solid rgba(245,240,232,0.07)", letterSpacing:"-0.01em" }}>
+              {l}
+            </a>
+          ))}
+          <a href="#contact" onClick={() => setMenuOpen(false)} className="btn-gold" style={{ marginTop:"2.5rem", textAlign:"center" }}>Book a Fitting</a>
+          <div style={{ marginTop:"auto", paddingTop:"3rem" }}>
+            <p style={{ fontSize:"0.7rem", color:"rgba(245,240,232,0.2)", letterSpacing:"0.1em" }}>+234 801 234 5678 · hello@atelierlagos.com</p>
+          </div>
+        </div>
