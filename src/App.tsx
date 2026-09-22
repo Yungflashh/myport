@@ -305,3 +305,24 @@ export default function AtelierPage() {
         }}>
           <a href="#hero" style={{ fontFamily:serif, fontSize:"1.5rem", fontWeight:300, letterSpacing:"0.16em", textTransform:"uppercase", position:"relative", zIndex:1 }}>
             Ate<em style={{ fontStyle:"italic" }}>lier</em>
+          </a>
+          <div className="hide-mob" style={{ display:"flex", gap:"2.5rem" }}>
+            {NAV.map(l => <a key={l} href={`#${l.toLowerCase()}`} className="nav-link">{l}</a>)}
+          </div>
+          <a href="#contact" className="btn-gold hide-mob" style={{ padding:"0.65rem 1.5rem" }}>Book a Fitting</a>
+          <button className="show-mob" onClick={() => setMenuOpen(true)}
+            style={{ background:"none", border:"none", color:C, cursor:"pointer", flexDirection:"column", gap:"5px", padding:"4px" }}>
+            <span style={{ display:"block", width:"24px", height:"1px", background:"currentColor" }} />
+            <span style={{ display:"block", width:"24px", height:"1px", background:"currentColor" }} />
+            <span style={{ display:"block", width:"18px", height:"1px", background:"currentColor" }} />
+          </button>
+        </nav>
+
+        {/* HERO COPY */}
+        <div style={{ position:"relative", zIndex:3, height:"100%", display:"flex", flexDirection:"column", justifyContent:"flex-end", padding:"0 3rem 4.5rem" }}>
+          <p style={{ fontSize:"0.67rem", letterSpacing:"0.22em", textTransform:"uppercase", color:G, marginBottom:"1.25rem", animation:"fadeUp 0.8s 0.3s both" }}>
+            Est. 2008 · Bespoke Tailoring · Lagos, Nigeria
+          </p>
+          <h1 className="hero-title" style={{ fontFamily:serif, fontSize:"clamp(4.5rem, 10vw, 8.5rem)", fontWeight:300, lineHeight:0.9, letterSpacing:"-0.025em", marginBottom:"2.25rem", animation:"fadeUp 0.95s 0.5s both" }}>
+            Worn<br /><em style={{ color:"rgba(245,240,232,0.32)", fontStyle:"italic" }}>with intent.</em>
+          </h1>
