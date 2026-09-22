@@ -326,3 +326,22 @@ export default function AtelierPage() {
           <h1 className="hero-title" style={{ fontFamily:serif, fontSize:"clamp(4.5rem, 10vw, 8.5rem)", fontWeight:300, lineHeight:0.9, letterSpacing:"-0.025em", marginBottom:"2.25rem", animation:"fadeUp 0.95s 0.5s both" }}>
             Worn<br /><em style={{ color:"rgba(245,240,232,0.32)", fontStyle:"italic" }}>with intent.</em>
           </h1>
+          <div className="hero-btns" style={{ display:"flex", alignItems:"center", gap:"1.25rem", animation:"fadeUp 0.9s 0.72s both" }}>
+            <a href="#contact" className="btn-gold">Book a Fitting</a>
+            <a href="#work" className="btn-outline">Explore Our Work</a>
+            <span className="hide-mob" style={{ width:"1px", height:"28px", background:"rgba(245,240,232,0.12)" }} />
+            <span className="hide-mob" style={{ fontSize:"0.8rem", color:"rgba(245,240,232,0.45)", fontWeight:300 }}>
+              Every stitch placed by hand.
+            </span>
+          </div>
+        </div>
+
+        {/* RIGHT SIDE STATS */}
+        <div className="hide-mob" style={{ position:"absolute", right:"2.5rem", bottom:"4.5rem", zIndex:3, display:"flex", flexDirection:"column", gap:"0.875rem", animation:"fadeIn 1s 1.2s both" }}>
+          {[["2,400+","Garments"],["16","Years"],["98%","Return rate"]].map(([n, l]) => (
+            <div key={l} style={{ background:"rgba(10,10,10,0.55)", backdropFilter:"blur(8px)", border:"1px solid rgba(245,240,232,0.08)", padding:"0.625rem 1rem", textAlign:"right" }}>
+              <div style={{ fontFamily:serif, fontSize:"1.5rem", fontWeight:300, color:C, lineHeight:1 }}>{n}</div>
+              <div style={{ fontSize:"0.62rem", letterSpacing:"0.1em", textTransform:"uppercase", color:"rgba(245,240,232,0.38)", marginTop:"2px" }}>{l}</div>
+            </div>
+          ))}
+        </div>
