@@ -345,3 +345,25 @@ export default function AtelierPage() {
             </div>
           ))}
         </div>
+
+        {/* SCROLL LINE */}
+        <div style={{ position:"absolute", bottom:"2.5rem", left:"50%", transform:"translateX(-50%)", zIndex:3, display:"flex", flexDirection:"column", alignItems:"center", gap:"8px", animation:"fadeIn 1s 1.5s both" }}>
+          <div style={{ width:"1px", height:"48px", background:"rgba(245,240,232,0.12)", position:"relative", overflow:"hidden" }}>
+            <div style={{ position:"absolute", top:0, left:0, width:"100%", height:"45%", background:G, animation:"dropLine 2.2s ease-in-out infinite" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* TICKER */}
+      <Ticker items={["Bespoke Suits","Made-to-Measure","Alterations","Evening Wear","Wedding Attire","Corporate Wardrobe","Hand-Stitched","Holland & Sherry","Dormeuil Fabrics","Lagos Island","Since 2008"]} />
+
+      {/* ════════════════════════════════════════════════════
+          §2  NUMBERS
+      ════════════════════════════════════════════════════ */}
+      <section style={{ background:"#0a0a0a", padding:"6.5rem 3rem" }} className="sec-pad">
+        <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+          <Reveal>
+            <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"3.5rem" }}>The record</p>
+          </Reveal>
+          <div className="split-4" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:"1px", background:"rgba(245,240,232,0.07)" }}>
+            {[
