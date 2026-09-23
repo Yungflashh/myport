@@ -367,3 +367,23 @@ export default function AtelierPage() {
           </Reveal>
           <div className="split-4" style={{ display:"grid", gridTemplateColumns:"repeat(4,1fr)", gap:"1px", background:"rgba(245,240,232,0.07)" }}>
             {[
+              { n:"2,400+", l:"Garments delivered since 2008" },
+              { n:"16 yrs", l:"Operating in Lagos, Nigeria" },
+              { n:"98%",    l:"Clients who commission again" },
+              { n:"48 hr",  l:"Express alteration turnaround" },
+            ].map(({ n, l }, i) => (
+              <Reveal key={n} delay={i * 0.1}>
+                <div style={{ padding:"2.5rem 2rem", background:"#0a0a0a" }}>
+                  <div style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4.5vw,3.5rem)", fontWeight:300, color:C, letterSpacing:"-0.02em", lineHeight:1, marginBottom:"0.75rem" }}>{n}</div>
+                  <div style={{ fontSize:"0.75rem", color:M, fontWeight:300, lineHeight:1.6 }}>{l}</div>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §3  CRAFT SPLIT  (video left / copy right)
+      ════════════════════════════════════════════════════ */}
+      <section id="work">
