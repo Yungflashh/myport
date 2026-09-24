@@ -428,3 +428,24 @@ export default function AtelierPage() {
                 </div>
               </Reveal>
               <Reveal delay={0.15}>
+                <a href="#contact" className="btn-gold">Start a Commission</a>
+              </Reveal>
+            </div>
+            {SERVICES.map((s, i) => (
+              <Reveal key={s.n} delay={i * 0.05}>
+                <div className="svc-row">
+                  <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-start", gap:"1.5rem" }}>
+                    <div style={{ display:"flex", gap:"1.75rem", flex:1 }}>
+                      <span style={{ fontFamily:serif, fontSize:"0.82rem", color:"rgba(245,240,232,0.18)", paddingTop:"4px", flexShrink:0, letterSpacing:"0.04em" }}>{s.n}</span>
+                      <div>
+                        <h3 style={{ fontSize:"1.0625rem", fontWeight:400, letterSpacing:"-0.01em", marginBottom:"0.45rem" }}>{s.title}</h3>
+                        <p style={{ fontSize:"0.855rem", fontWeight:300, color:M, lineHeight:1.75, maxWidth:"40rem" }}>{s.desc}</p>
+                      </div>
+                    </div>
+                    <div style={{ display:"flex", alignItems:"center", gap:"1.25rem", flexShrink:0, paddingTop:"4px" }}>
+                      <span style={{ fontSize:"0.6rem", letterSpacing:"0.12em", textTransform:"uppercase", color:G, background:"rgba(201,169,110,0.08)", padding:"3px 9px", border:`1px solid rgba(201,169,110,0.22)` }}>{s.tag}</span>
+                      <span className="svc-arrow">→</span>
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
