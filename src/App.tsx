@@ -408,3 +408,23 @@ export default function AtelierPage() {
                   We don't use automated cutting tables. Every panel is traced by hand from a paper pattern created specifically for your body — and used for no one else's.
                 </p>
               </Reveal>
+              <Reveal delay={0.3}>
+                <a href="#process" className="btn-outline">See our process →</a>
+              </Reveal>
+            </div>
+          </div>
+        </div>
+
+        {/* ── SERVICES LIST ────────────────────────────────── */}
+        <div style={{ background:"#0a0a0a", padding:"6.5rem 3rem" }} className="sec-pad">
+          <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+            <div style={{ display:"flex", justifyContent:"space-between", alignItems:"flex-end", marginBottom:"4rem", flexWrap:"wrap", gap:"1.5rem" }}>
+              <Reveal>
+                <div>
+                  <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"0.875rem" }}>What we make</p>
+                  <h2 style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4.5vw,3.75rem)", fontWeight:300, letterSpacing:"-0.02em", lineHeight:1.05 }}>
+                    Six ways<br /><em style={{ color:"rgba(245,240,232,0.35)" }}>to dress well.</em>
+                  </h2>
+                </div>
+              </Reveal>
+              <Reveal delay={0.15}>
