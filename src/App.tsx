@@ -387,3 +387,24 @@ export default function AtelierPage() {
           §3  CRAFT SPLIT  (video left / copy right)
       ════════════════════════════════════════════════════ */}
       <section id="work">
+        <div className="craft-flex" style={{ display:"flex", minHeight:"75vh" }}>
+          {/* VIDEO HALF */}
+          <div className="craft-vid" style={{ width:"52%", position:"relative" }}>
+            <BgVideo id={VID.craft} overlayColor="rgba(10,10,10,0.22)" />
+          </div>
+          {/* COPY HALF */}
+          <div style={{ flex:1, background:"#111111", display:"flex", alignItems:"center", padding:"4rem 3.5rem" }}>
+            <div>
+              <Reveal>
+                <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"1.5rem" }}>The craft</p>
+              </Reveal>
+              <Reveal delay={0.1}>
+                <h2 style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4vw,3.25rem)", fontWeight:300, lineHeight:1.12, letterSpacing:"-0.02em", marginBottom:"1.5rem" }}>
+                  Precision is<br /><em style={{ color:"rgba(245,240,232,0.38)" }}>not a feature.</em><br />It's the baseline.
+                </h2>
+              </Reveal>
+              <Reveal delay={0.2}>
+                <p style={{ fontSize:"0.9rem", fontWeight:300, lineHeight:1.85, color:M, marginBottom:"2.25rem", maxWidth:"28rem" }}>
+                  We don't use automated cutting tables. Every panel is traced by hand from a paper pattern created specifically for your body — and used for no one else's.
+                </p>
+              </Reveal>
