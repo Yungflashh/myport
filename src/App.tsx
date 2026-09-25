@@ -449,3 +449,23 @@ export default function AtelierPage() {
                   </div>
                 </div>
               </Reveal>
+            ))}
+            <div style={{ borderTop:"1px solid rgba(245,240,232,0.08)" }} />
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §4  FULL-BLEED QUOTE (sewing machine video)
+      ════════════════════════════════════════════════════ */}
+      <section style={{ position:"relative", height:"65vh", overflow:"hidden" }}>
+        <BgVideo id={VID.machine} overlayColor="rgba(10,10,10,0.58)" />
+        <div style={{ position:"relative", zIndex:3, height:"100%", display:"flex", alignItems:"center", justifyContent:"center", textAlign:"center", padding:"0 2.5rem" }}>
+          <div>
+            <Reveal>
+              <p style={{ fontSize:"0.67rem", letterSpacing:"0.22em", textTransform:"uppercase", color:G, marginBottom:"1.75rem" }}>Our philosophy</p>
+            </Reveal>
+            <Reveal delay={0.15}>
+              <blockquote className="quote-text" style={{ fontFamily:serif, fontSize:"clamp(1.75rem,4.5vw,3.5rem)", fontWeight:300, lineHeight:1.2, letterSpacing:"-0.02em", maxWidth:"50rem" }}>
+                "A suit should feel like a second skin — not like a second opinion."
+              </blockquote>
