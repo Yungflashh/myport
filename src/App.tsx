@@ -469,3 +469,23 @@ export default function AtelierPage() {
               <blockquote className="quote-text" style={{ fontFamily:serif, fontSize:"clamp(1.75rem,4.5vw,3.5rem)", fontWeight:300, lineHeight:1.2, letterSpacing:"-0.02em", maxWidth:"50rem" }}>
                 "A suit should feel like a second skin — not like a second opinion."
               </blockquote>
+            </Reveal>
+            <Reveal delay={0.3}>
+              <p style={{ fontSize:"0.72rem", letterSpacing:"0.15em", textTransform:"uppercase", color:M, marginTop:"1.75rem" }}>
+                — Atelier Studio, Lagos Island
+              </p>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §5  PROCESS
+      ════════════════════════════════════════════════════ */}
+      <section id="process" style={{ background:"#0e0e0e", padding:"6.5rem 3rem" }} className="sec-pad">
+        <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+          <Reveal>
+            <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"1rem" }}>How it works</p>
+          </Reveal>
+          <div className="proc-split" style={{ display:"flex", gap:"7rem", alignItems:"flex-start" }}>
+            <div style={{ flex:"0 0 auto", maxWidth:"21rem" }}>
