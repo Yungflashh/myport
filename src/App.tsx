@@ -510,3 +510,23 @@ export default function AtelierPage() {
                     </div>
                   </div>
                 </Reveal>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §6  NEEDLE CLOSE-UP VIDEO  (atmospheric interlude)
+      ════════════════════════════════════════════════════ */}
+      <section style={{ position:"relative", height:"55vh", overflow:"hidden" }}>
+        <BgVideo id={VID.needle} overlayColor="rgba(10,10,10,0.48)" />
+        <div style={{ position:"relative", zIndex:3, height:"100%", display:"flex", alignItems:"flex-end", padding:"0 3rem 4rem" }}>
+          <div style={{ maxWidth:"74rem", margin:"0 auto", width:"100%", display:"flex", justifyContent:"space-between", alignItems:"flex-end", flexWrap:"wrap", gap:"1.5rem" }}>
+            <Reveal>
+              <div>
+                <p style={{ fontSize:"0.67rem", letterSpacing:"0.22em", textTransform:"uppercase", color:G, marginBottom:"0.75rem" }}>The studio</p>
+                <h2 style={{ fontFamily:serif, fontSize:"clamp(1.75rem,3.5vw,2.75rem)", fontWeight:300, letterSpacing:"-0.02em", lineHeight:1.15 }}>
+                  Open by appointment.<br />Lagos Island & Victoria Island.
+                </h2>
+              </div>
