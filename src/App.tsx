@@ -530,3 +530,24 @@ export default function AtelierPage() {
                   Open by appointment.<br />Lagos Island & Victoria Island.
                 </h2>
               </div>
+            </Reveal>
+            <Reveal delay={0.2}>
+              <a href="#contact" className="btn-gold">Schedule a Visit</a>
+            </Reveal>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §7  TESTIMONIALS
+      ════════════════════════════════════════════════════ */}
+      <section id="story" style={{ background:"#0a0a0a", padding:"6.5rem 3rem", textAlign:"center" }} className="sec-pad">
+        <div style={{ maxWidth:"50rem", margin:"0 auto" }}>
+          <Reveal>
+            <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"3.5rem" }}>What clients say</p>
+          </Reveal>
+          {/* Rotating quote */}
+          <div style={{ minHeight:"180px", display:"flex", flexDirection:"column", alignItems:"center", justifyContent:"center" }}>
+            {TESTIMONIALS.map((t, i) => (
+              <div key={i} style={{ display: i === activeQ ? "block" : "none", animation: i === activeQ ? "fadeIn 0.65s both" : "none" }}>
+                <blockquote style={{ fontFamily:serif, fontSize:"clamp(1.4rem,3vw,2.1rem)", fontWeight:300, lineHeight:1.45, letterSpacing:"-0.01em", marginBottom:"1.75rem" }}>
