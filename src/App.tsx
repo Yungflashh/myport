@@ -489,3 +489,24 @@ export default function AtelierPage() {
           </Reveal>
           <div className="proc-split" style={{ display:"flex", gap:"7rem", alignItems:"flex-start" }}>
             <div style={{ flex:"0 0 auto", maxWidth:"21rem" }}>
+              <Reveal delay={0.1}>
+                <h2 style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4vw,3.5rem)", fontWeight:300, lineHeight:1.1, letterSpacing:"-0.02em", marginBottom:"1.5rem" }}>
+                  Six steps<br /><em style={{ color:"rgba(245,240,232,0.35)" }}>to perfect.</em>
+                </h2>
+                <p style={{ fontSize:"0.875rem", fontWeight:300, color:M, lineHeight:1.8, marginBottom:"2rem" }}>
+                  From first call to final press — a process designed around your schedule, not ours.
+                </p>
+                <a href="#contact" className="btn-gold">Book Consultation</a>
+              </Reveal>
+            </div>
+            <div style={{ flex:1 }}>
+              {PROCESS.map((p, i) => (
+                <Reveal key={p.title} delay={i * 0.07}>
+                  <div className="proc-row">
+                    <span className="proc-n">{String(i+1).padStart(2,"0")}</span>
+                    <div>
+                      <h3 style={{ fontSize:"0.9875rem", fontWeight:500, letterSpacing:"0.01em", marginBottom:"0.4rem" }}>{p.title}</h3>
+                      <p style={{ fontSize:"0.855rem", fontWeight:300, color:M, lineHeight:1.8 }}>{p.body}</p>
+                    </div>
+                  </div>
+                </Reveal>
