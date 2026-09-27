@@ -551,3 +551,23 @@ export default function AtelierPage() {
             {TESTIMONIALS.map((t, i) => (
               <div key={i} style={{ display: i === activeQ ? "block" : "none", animation: i === activeQ ? "fadeIn 0.65s both" : "none" }}>
                 <blockquote style={{ fontFamily:serif, fontSize:"clamp(1.4rem,3vw,2.1rem)", fontWeight:300, lineHeight:1.45, letterSpacing:"-0.01em", marginBottom:"1.75rem" }}>
+                  "{t.q}"
+                </blockquote>
+                <p style={{ fontSize:"0.72rem", letterSpacing:"0.12em", textTransform:"uppercase", color:M }}>
+                  {t.name} &nbsp;·&nbsp; <span style={{ color:G }}>{t.role}</span>
+                </p>
+              </div>
+            ))}
+          </div>
+          {/* Dots */}
+          <div style={{ display:"flex", gap:"0.75rem", justifyContent:"center", marginTop:"2.5rem" }}>
+            {TESTIMONIALS.map((_, i) => (
+              <button key={i} onClick={() => setActiveQ(i)} aria-label={`Testimonial ${i+1}`}
+                style={{ width:"6px", height:"6px", borderRadius:"50%", border:"none", cursor:"pointer", background: i === activeQ ? G : "rgba(245,240,232,0.18)", transform: i === activeQ ? "scale(1.35)" : "none", transition:"all 0.3s" }} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FABRIC TEXTURE VIDEO SEPARATOR */}
+      <section style={{ position:"relative", height:"35vh", overflow:"hidden" }}>
