@@ -571,3 +571,24 @@ export default function AtelierPage() {
 
       {/* FABRIC TEXTURE VIDEO SEPARATOR */}
       <section style={{ position:"relative", height:"35vh", overflow:"hidden" }}>
+        <BgVideo id={VID.fabric} overlayColor="rgba(10,10,10,0.6)" />
+        <div style={{ position:"relative", zIndex:3, height:"100%", display:"flex", alignItems:"center", justifyContent:"center" }}>
+          <Reveal>
+            <p style={{ fontFamily:serif, fontSize:"clamp(1.5rem,3vw,2.25rem)", fontWeight:300, letterSpacing:"0.04em", color:"rgba(245,240,232,0.6)", textAlign:"center", fontStyle:"italic" }}>
+              The fabric is the first impression.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §8  RATES
+      ════════════════════════════════════════════════════ */}
+      <section id="rates" style={{ background:"#0d0d0d", padding:"6.5rem 3rem" }} className="sec-pad">
+        <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+          <Reveal>
+            <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"0.875rem" }}>Investment</p>
+            <h2 style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4.5vw,3.75rem)", fontWeight:300, letterSpacing:"-0.02em", marginBottom:"4rem", lineHeight:1.05 }}>
+              Transparent pricing.<br /><em style={{ color:"rgba(245,240,232,0.35)" }}>No surprises.</em>
+            </h2>
+          </Reveal>
