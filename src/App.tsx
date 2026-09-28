@@ -633,3 +633,23 @@ export default function AtelierPage() {
       <section id="contact" style={{ background:"#0a0a0a", padding:"6.5rem 3rem" }} className="sec-pad">
         <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
           <div className="split-2" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"6rem", alignItems:"start" }}>
+            {/* LEFT */}
+            <div>
+              <Reveal>
+                <p style={{ fontSize:"0.67rem", letterSpacing:"0.2em", textTransform:"uppercase", color:G, marginBottom:"0.875rem" }}>Get in touch</p>
+                <h2 style={{ fontFamily:serif, fontSize:"clamp(2.25rem,4vw,3.5rem)", fontWeight:300, letterSpacing:"-0.02em", lineHeight:1.1, marginBottom:"1.5rem" }}>
+                  Let's build<br /><em style={{ color:"rgba(245,240,232,0.35)" }}>something together.</em>
+                </h2>
+                <p style={{ fontSize:"0.875rem", fontWeight:300, color:M, lineHeight:1.85, marginBottom:"2.5rem", maxWidth:"24rem" }}>
+                  Every commission starts with a conversation. Fill the form or contact us directly — we reply within 24 hours, always.
+                </p>
+              </Reveal>
+              <Reveal delay={0.15}>
+                <div style={{ display:"flex", flexDirection:"column", gap:"1.25rem" }}>
+                  {[
+                    { label:"Studio address",    val:"14 Adeyemi Lawson St, Lagos Island" },
+                    { label:"Phone / WhatsApp",   val:"+234 801 234 5678" },
+                    { label:"Email",              val:"hello@atelierlagos.com" },
+                    { label:"Hours",              val:"Mon–Sat, 9am–6pm (by appointment)" },
+                  ].map(({ label, val }) => (
+                    <div key={label}>
