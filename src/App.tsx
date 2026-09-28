@@ -612,3 +612,24 @@ export default function AtelierPage() {
                       </div>
                     ))}
                   </div>
+                  <a href="#contact" className={p.feat ? "btn-gold" : "btn-outline"} style={{ display:"block", textAlign:"center" }}>
+                    {p.feat ? "Book Now" : "Enquire"}
+                  </a>
+                </div>
+              </Reveal>
+            ))}
+          </div>
+          <Reveal delay={0.3}>
+            <p style={{ fontSize:"0.75rem", color:"rgba(245,240,232,0.22)", textAlign:"center", marginTop:"1.75rem", fontWeight:300 }}>
+              Starting estimates only. Final price confirmed at consultation. Fabric upgrades priced separately.
+            </p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          §9  CONTACT FORM
+      ════════════════════════════════════════════════════ */}
+      <section id="contact" style={{ background:"#0a0a0a", padding:"6.5rem 3rem" }} className="sec-pad">
+        <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+          <div className="split-2" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"6rem", alignItems:"start" }}>
