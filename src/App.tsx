@@ -592,3 +592,23 @@ export default function AtelierPage() {
               Transparent pricing.<br /><em style={{ color:"rgba(245,240,232,0.35)" }}>No surprises.</em>
             </h2>
           </Reveal>
+          <div className="split-3" style={{ display:"grid", gridTemplateColumns:"repeat(3,1fr)", gap:"1px", background:"rgba(245,240,232,0.07)" }}>
+            {[
+              { t:"Alteration",      from:"₦15,000",  note:"From 48-hr turnaround",  feat:false, items:["Hem adjustments","Taking in / letting out","Relining jackets","Sleeve shortening","Zip replacement"] },
+              { t:"Made-to-Measure", from:"₦120,000", note:"2–3 week lead time",      feat:true,  items:["2 fittings included","200+ fabric choices","Full lining","1-year guarantee","Measurements on file"] },
+              { t:"Bespoke",         from:"₦350,000", note:"6–8 week lead time",      feat:false, items:["Full canvas construction","Hand-stitched buttonholes","3+ fittings","Paper pattern kept on file","Lifetime alterations discount"] },
+            ].map((p, i) => (
+              <Reveal key={p.t} delay={i * 0.1}>
+                <div style={{ background: p.feat ? "#141414" : "#0d0d0d", padding:"2.5rem 2rem", borderTop: p.feat ? `2px solid ${G}` : "2px solid transparent", position:"relative", height:"100%" }}>
+                  {p.feat && <span style={{ position:"absolute", top:"1.25rem", right:"1.25rem", fontSize:"0.58rem", letterSpacing:"0.12em", textTransform:"uppercase", color:G, background:"rgba(201,169,110,0.1)", padding:"3px 9px", border:`1px solid rgba(201,169,110,0.28)` }}>Most popular</span>}
+                  <p style={{ fontSize:"0.67rem", letterSpacing:"0.14em", textTransform:"uppercase", color:M, marginBottom:"0.875rem" }}>{p.t}</p>
+                  <div style={{ fontFamily:serif, fontSize:"clamp(1.75rem,3vw,2.5rem)", fontWeight:300, color:C, marginBottom:"0.25rem", letterSpacing:"-0.01em" }}>From {p.from}</div>
+                  <p style={{ fontSize:"0.72rem", color:"rgba(245,240,232,0.28)", marginBottom:"1.75rem" }}>{p.note}</p>
+                  <div style={{ borderTop:"1px solid rgba(245,240,232,0.07)", paddingTop:"1.5rem", marginBottom:"2rem" }}>
+                    {p.items.map(item => (
+                      <div key={item} style={{ display:"flex", gap:"0.75rem", marginBottom:"0.6rem", alignItems:"flex-start" }}>
+                        <span style={{ color:G, fontSize:"0.7rem", marginTop:"2px", flexShrink:0 }}>—</span>
+                        <span style={{ fontSize:"0.8rem", fontWeight:300, color:"rgba(245,240,232,0.62)", lineHeight:1.5 }}>{item}</span>
+                      </div>
+                    ))}
+                  </div>
