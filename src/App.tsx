@@ -674,3 +674,23 @@ export default function AtelierPage() {
                     <div className="split-2" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"0.875rem" }}>
                       <input className="f-field" placeholder="Full name" required value={form.name} onChange={e => setForm({ ...form, name:e.target.value })} />
                       <input className="f-field" type="email" placeholder="Email address" required value={form.email} onChange={e => setForm({ ...form, email:e.target.value })} />
+                    </div>
+                    <select className="f-field" value={form.service} onChange={e => setForm({ ...form, service:e.target.value })}>
+                      <option value="">Select a service</option>
+                      {SERVICES.map(s => <option key={s.n} value={s.title}>{s.title}</option>)}
+                    </select>
+                    <textarea className="f-field" rows={5} placeholder="Tell us what you have in mind..." value={form.message} onChange={e => setForm({ ...form, message:e.target.value })} style={{ resize:"vertical" }} />
+                    <div style={{ display:"flex", alignItems:"center", gap:"1.5rem", marginTop:"0.25rem", flexWrap:"wrap" }}>
+                      <button type="submit" className="btn-gold">Send Message</button>
+                      <p style={{ fontSize:"0.72rem", color:"rgba(245,240,232,0.25)", fontWeight:300 }}>We respond within 24 hours.</p>
+                    </div>
+                  </form>
+                )}
+              </Reveal>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* ════════════════════════════════════════════════════
+          FOOTER
