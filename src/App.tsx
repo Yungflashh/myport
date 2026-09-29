@@ -653,3 +653,24 @@ export default function AtelierPage() {
                     { label:"Hours",              val:"Mon–Sat, 9am–6pm (by appointment)" },
                   ].map(({ label, val }) => (
                     <div key={label}>
+                      <p style={{ fontSize:"0.62rem", letterSpacing:"0.1em", textTransform:"uppercase", color:"rgba(245,240,232,0.28)", marginBottom:"3px" }}>{label}</p>
+                      <p style={{ fontSize:"0.875rem", fontWeight:300, color:"rgba(245,240,232,0.72)" }}>{val}</p>
+                    </div>
+                  ))}
+                </div>
+              </Reveal>
+            </div>
+            {/* RIGHT FORM */}
+            <div>
+              <Reveal delay={0.2}>
+                {sent ? (
+                  <div style={{ textAlign:"center", padding:"4rem 2rem", border:`1px solid rgba(201,169,110,0.18)` }}>
+                    <div style={{ fontFamily:serif, fontSize:"2.75rem", color:G, marginBottom:"1rem", lineHeight:1 }}>✓</div>
+                    <h3 style={{ fontFamily:serif, fontSize:"1.5rem", fontWeight:300, marginBottom:"0.75rem" }}>Message received.</h3>
+                    <p style={{ fontSize:"0.875rem", color:M, fontWeight:300 }}>We'll be in touch within 24 hours.</p>
+                  </div>
+                ) : (
+                  <form onSubmit={(e) => { e.preventDefault(); setSent(true); }} style={{ display:"flex", flexDirection:"column", gap:"0.875rem" }}>
+                    <div className="split-2" style={{ display:"grid", gridTemplateColumns:"1fr 1fr", gap:"0.875rem" }}>
+                      <input className="f-field" placeholder="Full name" required value={form.name} onChange={e => setForm({ ...form, name:e.target.value })} />
+                      <input className="f-field" type="email" placeholder="Email address" required value={form.email} onChange={e => setForm({ ...form, email:e.target.value })} />
