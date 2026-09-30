@@ -694,3 +694,23 @@ export default function AtelierPage() {
 
       {/* ════════════════════════════════════════════════════
           FOOTER
+      ════════════════════════════════════════════════════ */}
+      <footer style={{ background:"#060606", borderTop:"1px solid rgba(245,240,232,0.05)", padding:"3rem" }}>
+        <div style={{ maxWidth:"74rem", margin:"0 auto" }}>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"1.5rem", marginBottom:"2.5rem" }}>
+            <span style={{ fontFamily:serif, fontSize:"1.375rem", fontWeight:300, letterSpacing:"0.15em", textTransform:"uppercase" }}>
+              Ate<em style={{ fontStyle:"italic" }}>lier</em>
+            </span>
+            <div style={{ display:"flex", gap:"2rem", flexWrap:"wrap" }}>
+              {NAV.map(l => <a key={l} href={`#${l.toLowerCase()}`} className="ft-link">{l}</a>)}
+            </div>
+          </div>
+          <div style={{ display:"flex", justifyContent:"space-between", alignItems:"center", flexWrap:"wrap", gap:"1rem", borderTop:"1px solid rgba(245,240,232,0.05)", paddingTop:"1.5rem" }}>
+            <p style={{ fontSize:"0.68rem", color:"rgba(245,240,232,0.18)", letterSpacing:"0.04em" }}>© 2024 Atelier Lagos. All rights reserved.</p>
+            <p style={{ fontSize:"0.68rem", color:"rgba(245,240,232,0.12)", letterSpacing:"0.04em" }}>Craftsmanship without compromise · Est. 2008</p>
+          </div>
+        </div>
+      </footer>
+    </>
+  );
+}
